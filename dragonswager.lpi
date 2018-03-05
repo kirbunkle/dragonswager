@@ -7,7 +7,6 @@
       <Flags>
         <MainUnitHasCreateFormStatements Value="False"/>
         <MainUnitHasTitleStatement Value="False"/>
-        <MainUnitHasScaledStatement Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
@@ -29,7 +28,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="3">
+    <Units Count="9">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -43,6 +42,34 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliController"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="inputactions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="inputActions"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="cliwriter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliWriter"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="inputaction.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="inputAction"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="character.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="cliinputprocessor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliInputProcessor"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -5,77 +5,62 @@ unit cliController;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, cliWriter, inputAction, cliInputProcessor, utils;
 
 type
-  TActionType = (a_unknown, a_quit);
-
   CLIControllerClass = class
     private
-      mRun : boolean;
+      mRun            : boolean;
+      mWriter         : CLIWriterClass;
+      mInput          : InputActionClass;
+      mInputProcessor : CLIInputProcessorClass;
 
-      function getInput : string;
-      procedure outputMessage(s : string);
-      function inputToAction(s : string) : TActionType;
     public
-      constructor Create;
+      constructor Create(writer : CLIWriterClass);
       destructor Destroy; override;
       procedure start;
       procedure next;
       property running : boolean read mRun;
-    end;
+  end;
 
 implementation
 
-function CLIControllerClass.getInput : string;
-begin
-  Write('>> ');
-  ReadLn(result);
-end;
-
-procedure CLIControllerClass.outputMessage(s : string);
-begin
-  WriteLn;
-  WriteLn(s);
-end;
-
-function CLIControllerClass.inputToAction(s : string) : TActionType;
-begin
-  result := a_unknown;
-  if Pos('quit', s) = 1 then result := a_quit;
-end;
-
-constructor CLIControllerClass.Create;
+constructor CLIControllerClass.Create(
+  writer : CLIWriterClass);
 begin
   inherited Create;
+  mWriter := writer;
+  mInput := InputActionClass.Create;
+  mInputProcessor := CLIInputProcessorClass.Create;
   mRun := true;
 end;
 
 destructor CLIControllerClass.Destroy;
 begin
+  FreeAndNil(mInput);
+  FreeAndNil(mInputProcessor);
   inherited Destroy;
 end;
 
 procedure CLIControllerClass.start;
 begin
-  outputMessage('Yo, it''s time to do the thing, you ready to do the thing?');
+  mWriter.addLine('Yo, it''s time to do the thing, you ready to do the thing?');
 end;
 
 procedure CLIControllerClass.next;
-var
-  input : string = '';
-  action : TActionType;
 begin
-  input := getInput;
-  action := inputToAction(input);
-  case action of
-    a_quit : begin
-      outputMessage('Get out of there then.');
+  mInputProcessor.processInput(mInput);
+  case mInput.actionType of
+    ia_use : mWriter.addLine('Use the binch force, binch');
+    ia_info : mWriter.addLine('Here''s some info for you. Benus.');
+    ia_menu : mWriter.addLine('Menu options: quit');
+    ia_cancel : mWriter.addLine('Whoa ok jeez');
+    ia_confirm : mWriter.addLine('That sure, huh?');
+    ia_quit : begin
+      mWriter.addLine('Bye.');
       mRun := false;
-    end;
-    else begin
-      outputMessage('You said "' + input + '", which doesn''t make any sense to me, son');
-    end;
+    end
+    else mWriter.addLine('I don''t know what that means');
   end;
 end;
 
