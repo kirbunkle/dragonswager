@@ -28,7 +28,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="10">
+    <Units Count="18">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -75,6 +75,46 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliObjectReference"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="cligenericactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliGenericActionHandler"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="cliquitactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliQuitActionHandler"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="gamestate.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="gameState"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="climenuactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliMenuActionHandler"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="cliinfoactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliInfoActionHandler"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="cliconfirmactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliConfirmActionHandler"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="clicancelactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliCancelActionHandler"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="cliuseactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliUseActionHandler"/>
+      </Unit17>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

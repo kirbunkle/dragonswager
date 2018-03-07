@@ -4,29 +4,30 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="15">
+    <Units Count="23">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="12" Y="13"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="35"/>
       </Unit0>
       <Unit1>
         <Filename Value="cligame.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="2"/>
-        <CursorPos X="15" Y="58"/>
-        <UsageCount Value="29"/>
+        <TopLine Value="4"/>
+        <CursorPos X="39" Y="52"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="clicontroller.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliController"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="27" Y="3"/>
-        <UsageCount Value="29"/>
+        <CursorPos X="60" Y="30"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -34,7 +35,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="inputActions"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="35"/>
       </Unit3>
       <Unit4>
         <Filename Value="cliwriter.pas"/>
@@ -42,216 +43,268 @@
         <UnitName Value="cliWriter"/>
         <EditorIndex Value="1"/>
         <CursorPos X="33" Y="53"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="inputaction.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="inputAction"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="39" Y="8"/>
-        <UsageCount Value="29"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="43" Y="35"/>
+        <UsageCount Value="35"/>
       </Unit5>
       <Unit6>
         <Filename Value="character.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <CursorPos Y="12"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="utils.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
-        <CursorPos X="27" Y="11"/>
-        <UsageCount Value="26"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="58" Y="21"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="cliinputprocessor.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliInputProcessor"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="8"/>
-        <CursorPos X="30" Y="38"/>
-        <UsageCount Value="26"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="13"/>
+        <CursorPos X="58" Y="36"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\NitroVision\branches\siem\database\library\src\nitro.pas"/>
-        <EditorIndex Value="10"/>
-        <TopLine Value="76106"/>
-        <CursorPos X="45" Y="76117"/>
-        <UsageCount Value="15"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="76115"/>
+        <CursorPos X="35" Y="76135"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\..\NitroVision\branches\siem\NVServer\shared\OpCodes.pas"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="12"/>
         <TopLine Value="262"/>
         <CursorPos X="60" Y="298"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="..\..\NitroVision\branches\siem\NVServer\libESSDB\src\em_securitycheck.pas"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="13"/>
         <TopLine Value="777"/>
-        <CursorPos X="28" Y="813"/>
-        <UsageCount Value="15"/>
+        <CursorPos X="104" Y="804"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="baseobject.pas"/>
         <UnitName Value="baseObject"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <CursorPos X="43" Y="12"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="..\..\NitroVision\branches\siem\shared\CommonRoutinesUnit.pas"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="7175"/>
         <CursorPos X="45" Y="7198"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit13>
       <Unit14>
         <Filename Value="cliobjectreference.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliObjectReference"/>
-        <EditorIndex Value="5"/>
-        <CursorPos X="43" Y="96"/>
-        <UsageCount Value="22"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="40" Y="36"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit14>
+      <Unit15>
+        <Filename Value="cligenericactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliGenericActionHandler"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="55" Y="17"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="cliquitactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliQuitActionHandler"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="30" Y="35"/>
+        <UsageCount Value="26"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="gamestate.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="gameState"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="15" Y="13"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="climenuactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliMenuActionHandler"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="31" Y="32"/>
+        <UsageCount Value="26"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="cliinfoactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliInfoActionHandler"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="10" Y="5"/>
+        <UsageCount Value="26"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="cliconfirmactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliConfirmActionHandler"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="10" Y="5"/>
+        <UsageCount Value="26"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="clicancelactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliCancelActionHandler"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="57" Y="29"/>
+        <UsageCount Value="26"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="cliuseactionhandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliUseActionHandler"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="25" Y="32"/>
+        <UsageCount Value="26"/>
+      </Unit22>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="27" HistoryIndex="26">
       <Position1>
         <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="66" Column="15" TopLine="22"/>
+        <Caret Line="20" Column="17"/>
       </Position1>
       <Position2>
-        <Filename Value="clicontroller.pas"/>
-        <Caret Line="41" Column="38"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="8" Column="40"/>
       </Position2>
       <Position3>
-        <Filename Value="clicontroller.pas"/>
-        <Caret Line="17" Column="36"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="43" Column="18" TopLine="16"/>
       </Position3>
       <Position4>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="77" Column="8" TopLine="19"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="84" Column="20" TopLine="45"/>
       </Position4>
       <Position5>
         <Filename Value="clicontroller.pas"/>
-        <Caret Line="53" Column="31" TopLine="6"/>
+        <Caret Line="53" Column="40" TopLine="6"/>
       </Position5>
       <Position6>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="67" Column="11" TopLine="10"/>
+        <Filename Value="clicontroller.pas"/>
+        <Caret Line="13" Column="32"/>
       </Position6>
       <Position7>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="57" Column="28"/>
+        <Filename Value="cliobjectreference.pas"/>
+        <Caret Line="27" Column="22"/>
       </Position7>
       <Position8>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="30" Column="23"/>
+        <Filename Value="cliobjectreference.pas"/>
+        <Caret Line="39" Column="11"/>
       </Position8>
       <Position9>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="59" Column="48" TopLine="7"/>
+        <Filename Value="cliobjectreference.pas"/>
+        <Caret Line="50" Column="22"/>
       </Position9>
       <Position10>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="63" Column="23" TopLine="8"/>
+        <Filename Value="cliobjectreference.pas"/>
+        <Caret Line="84" Column="7" TopLine="34"/>
       </Position10>
       <Position11>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="55" Column="28" TopLine="8"/>
+        <Filename Value="cliobjectreference.pas"/>
+        <Caret Line="86" Column="36" TopLine="36"/>
       </Position11>
       <Position12>
         <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="20" Column="17"/>
+        <Caret Line="33" Column="18" TopLine="15"/>
       </Position12>
       <Position13>
-        <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="8" Column="40"/>
+        <Filename Value="clicontroller.pas"/>
+        <Caret Line="3" Column="27"/>
       </Position13>
       <Position14>
         <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="43" Column="18" TopLine="16"/>
+        <Caret Line="61" Column="20" TopLine="27"/>
       </Position14>
       <Position15>
         <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="84" Column="20" TopLine="45"/>
+        <Caret Line="45" Column="50" TopLine="15"/>
       </Position15>
       <Position16>
-        <Filename Value="clicontroller.pas"/>
-        <Caret Line="53" Column="40" TopLine="6"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="45" Column="50" TopLine="15"/>
       </Position16>
       <Position17>
-        <Filename Value="clicontroller.pas"/>
-        <Caret Line="13" Column="32"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="43" Column="49" TopLine="15"/>
       </Position17>
       <Position18>
-        <Filename Value="cliobjectreference.pas"/>
-        <Caret Line="27" Column="22"/>
+        <Filename Value="clicontroller.pas"/>
+        <Caret Line="68" Column="20" TopLine="12"/>
       </Position18>
       <Position19>
-        <Filename Value="cliobjectreference.pas"/>
-        <Caret Line="39" Column="11"/>
+        <Filename Value="clicontroller.pas"/>
+        <Caret Line="66" Column="9" TopLine="12"/>
       </Position19>
       <Position20>
-        <Filename Value="cliobjectreference.pas"/>
-        <Caret Line="50" Column="22"/>
+        <Filename Value="cligame.pas"/>
+        <Caret Line="50" Column="29" TopLine="2"/>
       </Position20>
       <Position21>
-        <Filename Value="cliobjectreference.pas"/>
-        <Caret Line="84" Column="7" TopLine="34"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="11" Column="10"/>
       </Position21>
       <Position22>
-        <Filename Value="cliobjectreference.pas"/>
-        <Caret Line="86" Column="36" TopLine="36"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="28" Column="30"/>
       </Position22>
       <Position23>
         <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="33" Column="18" TopLine="15"/>
+        <Caret Line="28" Column="27"/>
       </Position23>
       <Position24>
-        <Filename Value="clicontroller.pas"/>
-        <Caret Line="3" Column="27"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="93" Column="6" TopLine="37"/>
       </Position24>
       <Position25>
-        <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="61" Column="20" TopLine="27"/>
+        <Filename Value="cligenericactionhandler.pas"/>
+        <Caret Line="28" Column="40"/>
       </Position25>
       <Position26>
-        <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="45" Column="50" TopLine="15"/>
+        <Filename Value="gamestate.pas"/>
+        <Caret Line="11" Column="3"/>
       </Position26>
       <Position27>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="48" Column="24"/>
+        <Filename Value="cliinputprocessor.pas"/>
+        <Caret Line="10" Column="16"/>
       </Position27>
-      <Position28>
-        <Filename Value="inputaction.pas"/>
-        <Caret Line="8" Column="41"/>
-      </Position28>
-      <Position29>
-        <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="45" Column="50" TopLine="15"/>
-      </Position29>
-      <Position30>
-        <Filename Value="cliinputprocessor.pas"/>
-        <Caret Line="43" Column="49" TopLine="15"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

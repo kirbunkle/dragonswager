@@ -5,76 +5,96 @@ unit cliInputProcessor;
 interface
 
 uses
-  Classes, SysUtils, utils, inputAction, cliObjectReference;
+  Classes,
+  SysUtils,
+  utils,
+  cliObjectReference,
+  cliQuitActionHandler,
+  cliGenericActionHandler,
+  cliUseActionHandler,
+  cliConfirmActionHandler,
+  cliCancelActionHandler,
+  cliMenuActionHandler,
+  cliInfoActionHandler,
+  cliWriter;
 
 type
   CLIInputProcessorClass = class
     private
-      mInputText    : TStringList;
-      mCommandTable : CLIObjectReferenceClass;
+      mInputText      : TStringList;
+      mWriter         : CLIWriterClass;
+      mCommandTable   : CLIObjectReferenceClass;
 
-      procedure getInput;
-      function parseTextToAction(const index : integer) : TInputActionType;
+      // input handlers
+      mQuitHandler    : CLIQuitActionHandlerClass;
+      mUseHandler     : CLIUseActionHandlerClass;
+      mMenuHandler    : CLIMenuActionHandlerClass;
+      mConfirmHandler : CLIConfirmActionHandlerClass;
+      mCancelHandler  : CLICancelActionHandlerClass;
+      mInfoHandler    : CLIInfoActionHandlerClass;
     public
-      constructor Create;
+      constructor Create(const writerIn : CLIWriterClass);
       destructor Destroy; override;
-      procedure processInput(var inputAction : InputActionClass);
+      procedure processInput;
   end;
 
 implementation
 
-procedure CLIInputProcessorClass.getInput;
-var
-  text : string = '';
-begin
-  mInputText.Clear;
-  Write('>> ');
-  ReadLn(text);
-  split(text, mInputText);
-end;
-
-function CLIInputProcessorClass.parseTextToAction(
-  const index : integer) : TInputActionType;
-var
-  ref        : TObject = nil;
-begin
-  result := IA_UNKNOWN;
-  ref := mCommandTable.getUnique(mInputText.Strings[index]);
-  if ref <> nil then result := TInputActionType(ref);
-end;
-
-constructor CLIInputProcessorClass.Create;
+constructor CLIInputProcessorClass.Create(const writerIn : CLIWriterClass);
 begin
   inherited Create;
+  mWriter := writerIn;
+
   mInputText := TStringList.Create;
   mCommandTable := CLIObjectReferenceClass.Create;
 
-  // set up commands
-  mCommandTable.add('quit', TObject(IA_QUIT));
-  mCommandTable.add('yes', TObject(IA_CONFIRM));
-  mCommandTable.add('no,back', TObject(IA_CANCEL));
-  mCommandTable.add('menu', TObject(IA_MENU));
-  mCommandTable.add('info', TObject(IA_INFO));
-  mCommandTable.add('use,cast,play', TObject(IA_USE));
+  // action handlers
+  mQuitHandler    := CLIQuitActionHandlerClass.Create(mWriter);
+  mUseHandler     := CLIUseActionHandlerClass.Create(mWriter);
+  mMenuHandler    := CLIMenuActionHandlerClass.Create(mWriter);
+  mConfirmHandler := CLIConfirmActionHandlerClass.Create(mWriter);
+  mCancelHandler  := CLICancelActionHandlerClass.Create(mWriter);
+  mInfoHandler    := CLIInfoActionHandlerClass.Create(mWriter);
+
+  // set up action commands
+  mCommandTable.add('quit', mQuitHandler);
+  mCommandTable.add('yes', mConfirmHandler);
+  mCommandTable.add('no,back', mCancelHandler);
+  mCommandTable.add('menu', mMenuHandler);
+  mCommandTable.add('info', mInfoHandler);
+  mCommandTable.add('use,cast,play', mUseHandler);
 end;
 
 destructor CLIInputProcessorClass.Destroy;
 begin
   FreeAndNil(mInputText);
+  FreeAndNil(mQuitHandler);
+  FreeAndNil(mMenuHandler);
+  FreeAndNil(mConfirmHandler);
+  FreeAndNil(mCancelHandler);
+  FreeAndNil(mInfoHandler);
+  FreeAndNil(mUseHandler);
+  FreeAndNil(mCommandTable);
   inherited Destroy;
 end;
 
-procedure CLIInputProcessorClass.processInput(
-  var inputAction : InputActionClass);
+procedure CLIInputProcessorClass.processInput;
 var
-  action : TInputActionType = ia_unknown;
+  text : string = '';
+  ref  : TObject = nil;
 begin
-  inputAction.clear;
-  getInput;
+  mInputText.Clear;
+  Write('>> ');
+  ReadLn(text);
+  split(text, mInputText);
 
-  action := parseTextToAction(0);
-
-  inputAction.actionType := action;
+  ref := mCommandTable.getUnique(mInputText.Strings[0]);
+  if ref = nil then begin
+    mWriter.addLine('- UNKNOWN COMMAND -');
+    mWriter.addLine('I don''t know what that means');
+  end else begin
+    CLIGenericActionHandlerClass(ref).doAction(mInputText.CommaText);
+  end;
 end;
 
 end.

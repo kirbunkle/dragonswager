@@ -8,7 +8,8 @@ uses
   Classes,
   SysUtils,
   cliController,
-  cliWriter;
+  cliWriter,
+  gameState;
 
 type
 
@@ -38,6 +39,7 @@ begin
   inherited Create;
   mWriter := CLIWriterClass.Create;
   mController := CLIControllerClass.Create(mWriter);
+  gs_Running := true;
 end;
 
 destructor CLIGameClass.Destroy;
@@ -52,7 +54,7 @@ begin
   result := 0;
   mController.start;
   display;
-  while mController.running do begin
+  while gs_Running do begin
     mController.next;
     display;
   end;
