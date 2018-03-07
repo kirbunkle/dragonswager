@@ -5,7 +5,7 @@ unit inputAction;
 interface
 
 uses
-  Classes, SysUtils, baseObject, utils, cliWriter;
+  Classes, SysUtils, baseObject, utils;
 
 type
   InputActionClass = class
@@ -45,7 +45,7 @@ end;
 
 procedure InputActionClass.clear;
 begin
-  mType := ia_unknown;
+  mType := IA_UNKNOWN;
   mUser := nil;
   mTarget := nil;
   mItem := nil;

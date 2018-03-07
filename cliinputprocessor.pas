@@ -5,12 +5,13 @@ unit cliInputProcessor;
 interface
 
 uses
-  Classes, SysUtils, utils, inputAction;
+  Classes, SysUtils, utils, inputAction, cliObjectReference;
 
 type
   CLIInputProcessorClass = class
     private
-      mInputText : TStringList;
+      mInputText    : TStringList;
+      mCommandTable : CLIObjectReferenceClass;
 
       procedure getInput;
       function parseTextToAction(const index : integer) : TInputActionType;
@@ -19,26 +20,6 @@ type
       destructor Destroy; override;
       procedure processInput(var inputAction : InputActionClass);
   end;
-
-  textCommand = record
-    text    : string;
-    command : TInputActionType;
-  end;
-
-const
-  TEXT_COMMAND_COUNT = 9;
-
-  TEXT_TO_COMMAND_TABLE : array[0..TEXT_COMMAND_COUNT-1] of textCommand =
-  ( (text : 'quit';   command : ia_quit)
-  , (text : 'yes';    command : ia_confirm)
-  , (text : 'no';     command : ia_cancel)
-  , (text : 'back';   command : ia_cancel)
-  , (text : 'menu';   command : ia_menu)
-  , (text : 'info';   command : ia_info)
-  , (text : 'use';    command : ia_use)
-  , (text : 'cast';   command : ia_use)
-  , (text : 'play';   command : ia_use)
-  );
 
 implementation
 
@@ -55,50 +36,43 @@ end;
 function CLIInputProcessorClass.parseTextToAction(
   const index : integer) : TInputActionType;
 var
-  myText     : string = '';
-  i          : integer = 0;
-  prevAction : TInputActionType = ia_unknown;
+  ref        : TObject = nil;
 begin
-  result := ia_unknown;
-  myText := LowerCase(mInputText.Strings[index]);
-  for i := 0 to TEXT_COMMAND_COUNT - 1 do begin
-    if Pos(myText, TEXT_TO_COMMAND_TABLE[i].text) = 1 then begin
-      if prevAction = ia_unknown then begin
-        prevAction := TEXT_TO_COMMAND_TABLE[i].command;
-      end else if prevAction <> TEXT_TO_COMMAND_TABLE[i].command then begin
-        // multiple matches, didn't find a valid exclusive one
-        exit;
-      end;
-    end;
-  end;
-  result := prevAction;
+  result := IA_UNKNOWN;
+  ref := mCommandTable.getUnique(mInputText.Strings[index]);
+  if ref <> nil then result := TInputActionType(ref);
 end;
 
 constructor CLIInputProcessorClass.Create;
 begin
   inherited Create;
   mInputText := TStringList.Create;
+  mCommandTable := CLIObjectReferenceClass.Create;
+
+  // set up commands
+  mCommandTable.add('quit', TObject(IA_QUIT));
+  mCommandTable.add('yes', TObject(IA_CONFIRM));
+  mCommandTable.add('no,back', TObject(IA_CANCEL));
+  mCommandTable.add('menu', TObject(IA_MENU));
+  mCommandTable.add('info', TObject(IA_INFO));
+  mCommandTable.add('use,cast,play', TObject(IA_USE));
 end;
 
 destructor CLIInputProcessorClass.Destroy;
 begin
   FreeAndNil(mInputText);
-  inherited Destroy
+  inherited Destroy;
 end;
 
 procedure CLIInputProcessorClass.processInput(
   var inputAction : InputActionClass);
 var
-  i      : integer = 0;
   action : TInputActionType = ia_unknown;
 begin
   inputAction.clear;
   getInput;
 
-  for i := 0 to mInputText.Count - 1 do begin
-    action := parseTextToAction(i);
-    if action <> ia_unknown then break;
-  end;
+  action := parseTextToAction(0);
 
   inputAction.actionType := action;
 end;

@@ -51,12 +51,12 @@ procedure CLIControllerClass.next;
 begin
   mInputProcessor.processInput(mInput);
   case mInput.actionType of
-    ia_use : mWriter.addLine('Use the binch force, binch');
-    ia_info : mWriter.addLine('Here''s some info for you. Benus.');
-    ia_menu : mWriter.addLine('Menu options: quit');
-    ia_cancel : mWriter.addLine('Whoa ok jeez');
-    ia_confirm : mWriter.addLine('That sure, huh?');
-    ia_quit : begin
+    IA_USE : mWriter.addLine('Use the binch force, binch');
+    IA_INFO : mWriter.addLine('Here''s some info for you. Benus.');
+    IA_MENU : mWriter.addLine('Menu options: quit');
+    IA_CANCEL : mWriter.addLine('Whoa ok jeez');
+    IA_CONFIRM : mWriter.addLine('That sure, huh?');
+    IA_QUIT : begin
       mWriter.addLine('Bye.');
       mRun := false;
     end

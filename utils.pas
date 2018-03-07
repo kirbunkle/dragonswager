@@ -8,15 +8,17 @@ uses
   Classes, SysUtils;
 
 type
-  TInputActionType =
-    (ia_unknown
-    ,ia_quit
-    ,ia_menu
-    ,ia_use
-    ,ia_info
-    ,ia_confirm
-    ,ia_cancel
-  );
+  TInputActionType = qword;
+
+const
+  // input actions
+  IA_UNKNOWN = 0;
+  IA_QUIT    = 1;
+  IA_MENU    = 2;
+  IA_USE     = 3;
+  IA_INFO    = 4;
+  IA_CONFIRM = 5;
+  IA_CANCEL  = 6;
 
 procedure split(
   const stringToSplit : string;

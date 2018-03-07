@@ -28,7 +28,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="9">
+    <Units Count="10">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -70,6 +70,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliInputProcessor"/>
       </Unit8>
+      <Unit9>
+        <Filename Value="cliobjectreference.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliObjectReference"/>
+      </Unit9>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
