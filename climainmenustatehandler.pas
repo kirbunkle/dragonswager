@@ -42,7 +42,7 @@ end;
 procedure CLIMainMenuStateHandlerClass.display;
 begin
   globalWriter.addLine('- MAIN MENU -');
-  globalWriter.addLine('Options: quit');
+  showHelp;
 end;
 
 end.

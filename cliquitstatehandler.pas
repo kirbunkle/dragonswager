@@ -10,15 +10,11 @@ uses
   cliObjectReference,
   cliWriter,
   cliGenericStateHandler,
-  cliConfirmStateHandler,
-  cliCancelStateHandler,
+  cliSimpleAction,
   gameState;
 
 type
   CLIQuitStateHandlerClass = class(CLIGenericStateHandlerClass)
-    private
-      mConfirmHandler : CLIConfirmStateHandlerClass;
-      mCancelHandler  : CLICancelStateHandlerClass;
     public
       constructor Create(const parent : CLIGenericStateHandlerClass);
       destructor Destroy; override;
@@ -31,18 +27,12 @@ implementation
 constructor CLIQuitStateHandlerClass.Create(const parent : CLIGenericStateHandlerClass);
 begin
   inherited Create(parent);
-
-  mConfirmHandler := CLIConfirmStateHandlerClass.Create(self);
-  mCancelHandler := CLICancelStateHandlerCLass.Create(self);
-
-  mCommandTable.add('yes', mConfirmHandler);
-  mCommandTable.add('no,back', mCancelHandler);
+  mCommandTable.add('yes', SIMPLE_ACTION_CONFIRM);
+  mCommandTable.add('no,back', SIMPLE_ACTION_CANCEL);
 end;
 
 destructor CLIQuitStateHandlerClass.Destroy;
 begin
-  FreeAndNil(mConfirmHandler);
-  FreeAndNil(mCancelHandler);
   inherited Destroy;
 end;
 

@@ -14,9 +14,6 @@
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
     </General>
-    <VersionInfo>
-      <StringTable ProductVersion=""/>
-    </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
     </BuildModes>
@@ -28,7 +25,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="22">
+    <Units Count="24">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -135,6 +132,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliQuitStateHandler"/>
       </Unit21>
+      <Unit22>
+        <Filename Value="clihelpstatehandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliHelpStateHandler"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="clisimpleaction.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliSimpleAction"/>
+      </Unit23>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
