@@ -7,17 +7,16 @@ interface
 uses
   Classes,
   SysUtils,
-  cliController,
   cliWriter,
+  cliMainMenuStateHandler,
+  cliGenericStateHandler,
   gameState;
 
 type
 
   CLIGameClass = class
     private
-      mController : CLIControllerClass;
-      mWriter     : CLIWriterClass;
-
+      mMainMenuHandler : CLIMainMenuStateHandlerClass;
       procedure display;
     public
       constructor Create;
@@ -29,34 +28,39 @@ implementation
 
 procedure CLIGameClass.display;
 begin
-  while mWriter.displayNext do begin
-    Sleep(500);
+  while globalWriter.displayNext do begin
+    Sleep(250);
   end;
 end;
 
 constructor CLIGameClass.Create;
 begin
   inherited Create;
-  mWriter := CLIWriterClass.Create;
-  mController := CLIControllerClass.Create(mWriter);
-  gs_Running := true;
+  globalGameState := GameStateClass.Create;
+  globalWriter := CLIWriterClass.Create;
+  mMainMenuHandler := CLIMainMenuStateHandlerClass.Create(nil);
+  globalGameState.pushState(mMainMenuHandler);
 end;
 
 destructor CLIGameClass.Destroy;
 begin
-  FreeAndNil(mController);
-  FreeAndNil(mWriter);
+  FreeAndNil(mMainMenuHandler);
+  FreeAndNil(globalWriter);
+  FreeAndNil(globalGameState);
   inherited Destroy;
 end;
 
 function CLIGameClass.run : integer;
+var
+  text : string = '';
 begin
   result := 0;
-  mController.start;
-  display;
-  while gs_Running do begin
-    mController.next;
+  while globalGameState.running do begin
+    CLIGenericStateHandlerClass(globalGameState.currentState).display;
     display;
+    Write('>> ');
+    ReadLn(text);
+    CLIGenericStateHandlerClass(globalGameState.currentState).processInput(text);
   end;
 end;
 

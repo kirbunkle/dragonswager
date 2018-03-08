@@ -28,7 +28,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="18">
+    <Units Count="22">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -66,9 +66,9 @@
         <IsPartOfProject Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="cliinputprocessor.pas"/>
+        <Filename Value="cligenericstatehandler.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="cliInputProcessor"/>
+        <UnitName Value="cliGenericStateHandler"/>
       </Unit8>
       <Unit9>
         <Filename Value="cliobjectreference.pas"/>
@@ -115,6 +115,26 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliUseActionHandler"/>
       </Unit17>
+      <Unit18>
+        <Filename Value="climainmenustatehandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliMainMenuStateHandler"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="cliconfirmstatehandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliConfirmStateHandler"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="clicancelstatehandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliCancelStateHandler"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="cliquitstatehandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliQuitStateHandler"/>
+      </Unit21>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

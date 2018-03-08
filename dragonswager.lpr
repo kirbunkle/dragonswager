@@ -3,8 +3,8 @@ program dragonswager;
 {$mode objfpc}{$H+}
 
 uses
-  Classes, cligame, cliGenericActionHandler, cliQuitActionHandler, gameState, cliMenuActionHandler, 
-cliInfoActionHandler, cliConfirmActionHandler, cliCancelActionHandler, cliUseActionHandler;
+  Classes,
+  cligame;
 
 var
   game : CLIGameClass = nil;

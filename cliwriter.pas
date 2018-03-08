@@ -20,6 +20,9 @@ type
       function displayNext : boolean;
   end;
 
+var
+  globalWriter : CLIWriterClass = nil;
+
 implementation
 
 constructor CLIWriterClass.Create;
