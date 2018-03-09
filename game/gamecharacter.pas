@@ -9,9 +9,15 @@ uses
 
 type
   GameCharacterClass = class
+    private
+      mName : string;
+      mHP   : integer;
+
     public
       constructor Create;
       destructor Destroy; override;
+      property name : string read mName write mName;
+      property hp : integer read mHP write mHP;
   end;
 
 implementation
@@ -25,5 +31,6 @@ destructor GameCharacterClass.Destroy;
 begin
   inherited Destroy;
 end;
+
 end.
 

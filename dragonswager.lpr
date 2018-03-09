@@ -28,7 +28,7 @@ var
   mainMenuStateHandler : CLIMainMenuStateHandlerClass = nil;
 begin
   mainMenuStateHandler := CLIMainMenuStateHandlerClass.Create;
-  mainMenuStateHandler.doAction; // set as current state
+  mainMenuStateHandler.doAction;
   while globalGameState.currentState <> nil do begin
     CLIGenericStateHandlerClass(globalGameState.currentState).display;
     globalWriter.display;
