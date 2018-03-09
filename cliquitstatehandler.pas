@@ -10,13 +10,13 @@ uses
   cliObjectReference,
   cliWriter,
   cliGenericStateHandler,
-  cliSimpleAction,
+  cliConst,
   gameState;
 
 type
   CLIQuitStateHandlerClass = class(CLIGenericStateHandlerClass)
     public
-      constructor Create(const parent : CLIGenericStateHandlerClass);
+      constructor Create;
       destructor Destroy; override;
       procedure display override;
       procedure confirm override;
@@ -24,11 +24,12 @@ type
 
 implementation
 
-constructor CLIQuitStateHandlerClass.Create(const parent : CLIGenericStateHandlerClass);
+constructor CLIQuitStateHandlerClass.Create;
 begin
-  inherited Create(parent);
-  mCommandTable.add('yes', SIMPLE_ACTION_CONFIRM);
-  mCommandTable.add('no,back', SIMPLE_ACTION_CANCEL);
+  inherited Create;
+  mStateName := 'QUIT';
+  mCommandTable.add('yes', STATE_CONFIRM);
+  mCommandTable.add('no,back', STATE_CANCEL);
 end;
 
 destructor CLIQuitStateHandlerClass.Destroy;
@@ -38,13 +39,13 @@ end;
 
 procedure CLIQuitStateHandlerClass.display;
 begin
-  globalWriter.addLine('- QUIT -');
   globalWriter.addLine('Are you sure you want to quit?');
 end;
 
 procedure CLIQuitStateHandlerClass.confirm;
 begin
-  globalGameState.running := false;
+  globalGameState.popState;
+  globalGameState.popState;
 end;
 
 end.

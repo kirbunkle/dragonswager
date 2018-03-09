@@ -5,26 +5,30 @@ unit cliObjectReference;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, cliConst, fgl;
 
 type
+  TObjectType = word;
+
+  TStringWordMap = specialize TFPGMap<String, word>;
+
   CLIObjectReferenceClass = class
     private
-      mMap     : TStringList;
+      mMap : TStringWordMap;
 
       function findUnique(const nameIn : string) : integer;
       function findFirst(const nameIn : string) : integer;
-      function find(const objectIn : TObject) : integer;
+      function find(const objectTypeIn : TObjectType) : integer;
     public
       constructor Create;
       destructor Destroy; override;
-      procedure add(const namesIn : string; const objectIn : TObject);
-      procedure add(const namesIn : TStringList; const objectIn : TObject);
-      function getUnique(const nameIn : string) : TObject;
-      function getFirst(const nameIn : string) : TObject;
+      procedure add(const namesIn : string; const objectTypeIn : TObjectType);
+      procedure add(const namesIn : TStringList; const objectTypeIn : TObjectType);
+      function getUnique(const nameIn : string) : TObjectType;
+      function getFirst(const nameIn : string) : TObjectType;
       procedure removeAll(const nameIn : string);
-      procedure remove(const objectIn : TObject);
-      function contains(const objectIn : TObject) : boolean;
+      procedure remove(const objectTypeIn : TObjectType);
+      function contains(const objectTypeIn : TObjectType) : boolean;
       function count : integer;
       function getOption(const index : integer) : string;
   end;
@@ -41,9 +45,9 @@ begin
   result := -1;
   name := LowerCase(nameIn);
   for i := 0 to mMap.Count - 1 do begin
-    loc := Pos(name, mMap.Strings[i]);
+    loc := Pos(name, mMap.Keys[i]);
     if (loc = 1)
-    or ((loc > 1) and (mMap.Strings[i][loc-1] = ',')) then begin
+    or ((loc > 1) and (mMap.Keys[i][loc-1] = ',')) then begin
       if foundIndex = -1 then begin
         foundIndex := i;
       end else if foundIndex <> i then begin
@@ -63,22 +67,22 @@ begin
   result := -1;
   name := LowerCase(nameIn);
   for i := 0 to mMap.Count - 1 do begin
-    loc := Pos(name, mMap.Strings[i]);
+    loc := Pos(name, mMap.Keys[i]);
     if (loc = 1)
-    or ((loc > 1) and (mMap.Strings[i][loc-1] = ',')) then begin
+    or ((loc > 1) and (mMap.Keys[i][loc-1] = ',')) then begin
       result := i;
       break;
     end;
   end;
 end;
 
-function CLIObjectReferenceClass.find(const objectIn : TObject) : integer;
+function CLIObjectReferenceClass.find(const objectTypeIn : TObjectType) : integer;
 var
   i : integer = 0;
 begin
   result := -1;
   for i := 0 to mMap.Count - 1 do begin
-    if objectIn.Equals(mMap.Objects[i]) then begin
+    if objectTypeIn = mMap.Data[i] then begin
       result := i;
       break;
     end;
@@ -88,7 +92,7 @@ end;
 constructor CLIObjectReferenceClass.Create;
 begin
   inherited Create;
-  mMap := TStringList.Create;
+  mMap := TStringWordMap.Create;
 end;
 
 destructor CLIObjectReferenceClass.Destroy;
@@ -99,39 +103,39 @@ end;
 
 procedure CLIObjectReferenceClass.add(
   const namesIn : string;
-  const objectIn : TObject);
+  const objectTypeIn : TObjectType);
 var
   names : string = '';
 begin
   names := LowerCase(namesIn);
-  mMap.AddObject(names, objectIn);
+  mMap.Add(names, objectTypeIn);
 end;
 
 procedure CLIObjectReferenceClass.add(
   const namesIn : TStringList;
-  const objectIn : TObject);
+  const objectTypeIn : TObjectType);
 begin
-  add(namesIn.CommaText, objectIn);
+  add(namesIn.CommaText, objectTypeIn);
 end;
 
 function CLIObjectReferenceClass.getUnique(
-  const nameIn : string) : TObject;
+  const nameIn : string) : TObjectType;
 var
   index : integer = -1;
 begin
-  result := nil;
+  result := STATE_UNKNOWN;
   index := findUnique(nameIn);
-  if index >= 0 then result := mMap.Objects[index];
+  if index >= 0 then result := mMap.Data[index];
 end;
 
 function CLIObjectReferenceClass.getFirst(
-  const nameIn : string) : TObject;
+  const nameIn : string) : TObjectType;
 var
   index : integer = -1;
 begin
-  result := nil;
+  result := STATE_UNKNOWN;
   index := findFirst(nameIn);
-  if index >= 0 then result := mMap.Objects[index];
+  if index >= 0 then result := mMap.Data[index];
 end;
 
 procedure CLIObjectReferenceClass.removeAll(const nameIn : string);
@@ -148,17 +152,17 @@ begin
   end;
 end;
 
-procedure CLIObjectReferenceClass.remove(const objectIn : TObject);
+procedure CLIObjectReferenceClass.remove(const objectTypeIn : TObjectType);
 var
   index : integer = -1;
 begin
-  index := find(objectIn);
+  index := find(objectTypeIn);
   if index >= 0 then mMap.Delete(index);
 end;
 
-function CLIObjectReferenceClass.contains(const objectIn : TObject) : boolean;
+function CLIObjectReferenceClass.contains(const objectTypeIn : TObjectType) : boolean;
 begin
-  result := find(objectIn) >= 0;
+  result := find(objectTypeIn) >= 0;
 end;
 
 function CLIObjectReferenceClass.count : integer;
@@ -168,7 +172,7 @@ end;
 
 function CLIObjectReferenceClass.getOption(const index : integer) : string;
 begin
-  result := mMap.Strings[index];
+  result := mMap.Keys[index];
 end;
 
 end.

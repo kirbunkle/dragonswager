@@ -9,22 +9,24 @@ uses
   SysUtils,
   cliObjectReference,
   cliWriter,
-  gameState,
-  cliSimpleAction;
+  cliConst,
+  gameState;
 
 type
   CLIGenericStateHandlerClass = class
     protected
       mInputText      : TStringList;
       mCommandTable   : CLIObjectReferenceClass;
-      mParentRef      : CLIGenericStateHandlerClass;
+      mStateName      : string;
     public
-      constructor Create(const parent : CLIGenericStateHandlerClass);
+      constructor Create;
       destructor Destroy; override;
 
-
       procedure processInput(const text : string);
+      procedure advanceState(const state : CLIGenericStateHandlerClass);
       procedure showHelp;
+      procedure displayName;
+      procedure unknown;
 
       procedure confirm virtual;
       procedure cancel virtual;
@@ -35,17 +37,21 @@ type
 
 implementation
 
+uses
+  cliMainMenuStateHandler,
+  cliQuitStateHandler;
+
 const
   HELP_STR = 'options,help';
 
-constructor CLIGenericStateHandlerClass.Create(const parent : CLIGenericStateHandlerClass);
+constructor CLIGenericStateHandlerClass.Create;
 begin
   inherited Create;
+  mStateName := '';
   mInputText := TStringList.Create;
   mInputText.Delimiter := ' ';
   mCommandTable := CLIObjectReferenceClass.Create;
-  mCommandTable.add(HELP_STR, SIMPLE_ACTION_HELP);
-  mParentRef := parent;
+  mCommandTable.add(HELP_STR, STATE_HELP);
 end;
 
 destructor CLIGenericStateHandlerClass.Destroy;
@@ -57,37 +63,31 @@ end;
 
 procedure CLIGenericStateHandlerClass.processInput(const text : string);
 var
-  ref : TObject = nil;
+  state : TObjectType = STATE_UNKNOWN;
 begin
   mInputText.Clear;
   mInputText.DelimitedText := text;
   if mInputText.Count > 0 then begin
-    ref := mCommandTable.getUnique(mInputText.Strings[0]);
-    if ref = nil then begin
-      globalWriter.addLine('- UNKNOWN COMMAND -');
-      globalWriter.addLine('I don''t know what "' + mInputText.Strings[0] + '" means');
-    end else begin
-      mInputText.Delete(0);
-      if ref.ClassType = CLISimpleActionClass then begin
-        // perform the simple action
-        case CLISimpleActionClass(ref).action of
-          a_Confirm : confirm;
-          a_Cancel  : cancel;
-          a_Help    : showHelp;
-          else begin
-            globalWriter.addLine('- UNKNOWN ACTION -');
-            globalWriter.addLine('I couldn''t figure out how to do the thing');
-          end;
-        end;
-      end else begin
-        // another state handler, continue down the chain
-        if mInputText.Count > 0 then begin
-          CLIGenericStateHandlerClass(ref).processInput(mInputText.DelimitedText);
-        end else begin
-          CLIGenericStateHandlerClass(ref).doAction;
-        end;
+    state := mCommandTable.getUnique(mInputText.Strings[0]);
+    case state of
+      STATE_CONFIRM  : confirm;
+      STATE_CANCEL   : cancel;
+      STATE_HELP     : showHelp;
+      STATE_MAINMENU : advanceState(CLIMainMenuStateHandlerClass.Create);
+      STATE_QUIT     : advanceState(CLIQuitStateHandlerClass.Create);
+      else begin
+        unknown;
       end;
     end;
+  end;
+end;
+
+procedure CLIGenericStateHandlerClass.advanceState(const state : CLIGenericStateHandlerClass);
+begin
+  mInputText.Delete(0);
+  state.doAction;
+  if mInputText.Count > 0 then begin
+    state.processInput(mInputText.DelimitedText);
   end;
 end;
 
@@ -112,6 +112,17 @@ begin
   end;
 end;
 
+procedure CLIGenericStateHandlerClass.displayName;
+begin
+  globalWriter.addLine('*-- ' + mStateName + ' --*');
+end;
+
+procedure CLIGenericStateHandlerClass.unknown;
+begin
+  globalWriter.addLine('- UNKNOWN COMMAND -');
+  globalWriter.addLine('I don''t know what "' + mInputText.Strings[0] + '" means');
+end;
+
 procedure CLIGenericStateHandlerClass.confirm;
 begin
   globalWriter.addLine('** CLIGenericStateHandlerClass.confirm called, nothing to confirm... **');
@@ -124,6 +135,7 @@ end;
 
 procedure CLIGenericStateHandlerClass.doAction;
 begin
+  displayName;
   globalGameState.pushState(self);
 end;
 

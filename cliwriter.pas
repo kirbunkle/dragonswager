@@ -18,6 +18,7 @@ type
       destructor Destroy; override;
       procedure addLine(const s : string);
       function displayNext : boolean;
+      procedure display;
   end;
 
 var
@@ -57,6 +58,13 @@ begin
     result := true;
   end else begin
     newBlock := true;
+  end;
+end;
+
+procedure CLIWriterClass.display;
+begin
+  while globalWriter.displayNext do begin
+    Sleep(250);
   end;
 end;
 

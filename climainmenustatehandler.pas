@@ -7,41 +7,33 @@ interface
 uses
   Classes,
   sysutils,
-  cliObjectReference,
-  cliWriter,
-  cliQuitStateHandler,
-  cliGenericStateHandler;
+  cliGenericStateHandler,
+  cliConst;
 
 type
   CLIMainMenuStateHandlerClass = class(CLIGenericStateHandlerClass)
-    private
-      mQuitHandler : CLIQuitStateHandlerClass;
     public
-      constructor Create(const parent : CLIGenericStateHandlerClass);
+      constructor Create;
       destructor Destroy; override;
       procedure display; override;
   end;
 
 implementation
 
-constructor CLIMainMenuStateHandlerClass.Create(const parent : CLIGenericStateHandlerClass);
+constructor CLIMainMenuStateHandlerClass.Create;
 begin
-  inherited Create(parent);
-
-  mQuitHandler := CLIQuitStateHandlerClass.Create(self);
-
-  mCommandTable.add('quit', mQuitHandler);
+  inherited Create;
+  mStateName := 'MAIN MENU';
+  mCommandTable.add('quit', STATE_QUIT);
 end;
 
 destructor CLIMainMenuStateHandlerClass.Destroy;
 begin
-  FreeAndNil(mQuitHandler);
   inherited Destroy;
 end;
 
 procedure CLIMainMenuStateHandlerClass.display;
 begin
-  globalWriter.addLine('- MAIN MENU -');
   showHelp;
 end;
 
