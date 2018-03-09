@@ -5,13 +5,14 @@ unit gameState;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, gameEnemyGroup;
 
 type
   GameStateClass = class
     private
       mStateStack : TList;
       mCount      : integer;
+      mEnemyGroup : GameEnemyGroupClass;
 
       procedure cleanUp;
     public
@@ -46,11 +47,12 @@ begin
   inherited Create;
   mStateStack := TList.Create;
   mCount := 0;
+  mEnemyGroup := nil;
 end;
 
 destructor GameStateClass.Destroy;
 begin
-  cleanUp;
+  clearStates;
   FreeAndNil(mStateStack);
   inherited Destroy;
 end;

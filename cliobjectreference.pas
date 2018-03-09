@@ -46,8 +46,8 @@ begin
   name := LowerCase(nameIn);
   for i := 0 to mMap.Count - 1 do begin
     loc := Pos(name, mMap.Keys[i]);
-    if (loc = 1)
-    or ((loc > 1) and (mMap.Keys[i][loc-1] = ',')) then begin
+    if (loc > 1) then loc := Pos(',' + name, mMap.Keys[i]);
+    if loc > 0 then begin
       if foundIndex = -1 then begin
         foundIndex := i;
       end else if foundIndex <> i then begin

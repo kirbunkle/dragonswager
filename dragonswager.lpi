@@ -25,7 +25,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="25">
+    <Units Count="28">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -83,9 +83,9 @@
         <UnitName Value="cliQuitActionHandler"/>
       </Unit11>
       <Unit12>
-        <Filename Value="gamestate.pas"/>
+        <Filename Value="gamebattlergroup.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="gameState"/>
+        <UnitName Value="gameBattlerGroup"/>
       </Unit12>
       <Unit13>
         <Filename Value="climenuactionhandler.pas"/>
@@ -147,6 +147,21 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliConst"/>
       </Unit24>
+      <Unit25>
+        <Filename Value="clibattleteststatehandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliBattleTestStateHandler"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="gameenemygroup.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="gameEnemyGroup"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="gamecharacter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="gameCharacter"/>
+      </Unit27>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

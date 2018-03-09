@@ -39,7 +39,8 @@ implementation
 
 uses
   cliMainMenuStateHandler,
-  cliQuitStateHandler;
+  cliQuitStateHandler,
+  cliBattleTestStateHandler;
 
 const
   HELP_STR = 'options,help';
@@ -70,11 +71,12 @@ begin
   if mInputText.Count > 0 then begin
     state := mCommandTable.getUnique(mInputText.Strings[0]);
     case state of
-      STATE_CONFIRM  : confirm;
-      STATE_CANCEL   : cancel;
-      STATE_HELP     : showHelp;
-      STATE_MAINMENU : advanceState(CLIMainMenuStateHandlerClass.Create);
-      STATE_QUIT     : advanceState(CLIQuitStateHandlerClass.Create);
+      STATE_CONFIRM    : confirm;
+      STATE_CANCEL     : cancel;
+      STATE_HELP       : showHelp;
+      STATE_MAINMENU   : advanceState(CLIMainMenuStateHandlerClass.Create);
+      STATE_QUIT       : advanceState(CLIQuitStateHandlerClass.Create);
+      STATE_TESTBATTLE : advanceState(CLIBattleTestStateHandlerClass.Create);
       else begin
         unknown;
       end;

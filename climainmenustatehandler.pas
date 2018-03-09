@@ -24,6 +24,7 @@ constructor CLIMainMenuStateHandlerClass.Create;
 begin
   inherited Create;
   mStateName := 'MAIN MENU';
+  mCommandTable.add('battle,test', STATE_TESTBATTLE);
   mCommandTable.add('quit', STATE_QUIT);
 end;
 
