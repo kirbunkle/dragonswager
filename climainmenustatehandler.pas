@@ -7,8 +7,7 @@ interface
 uses
   Classes,
   sysutils,
-  cliGenericStateHandler,
-  cliConst;
+  cliGenericStateHandler;
 
 type
   CLIMainMenuStateHandlerClass = class(CLIGenericStateHandlerClass)
@@ -35,6 +34,7 @@ end;
 
 procedure CLIMainMenuStateHandlerClass.display;
 begin
+  inherited display;
   showHelp;
 end;
 

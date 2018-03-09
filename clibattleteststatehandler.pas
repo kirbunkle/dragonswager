@@ -8,7 +8,6 @@ uses
   Classes,
   sysutils,
   cliGenericStateHandler,
-  cliConst,
   cliWriter;
 
 type
@@ -36,6 +35,7 @@ end;
 
 procedure CLIBattleTestStateHandlerClass.display;
 begin
+  inherited display;
   globalWriter.addLine('pen15');
 end;
 

@@ -10,7 +10,6 @@ uses
   cliObjectReference,
   cliWriter,
   cliGenericStateHandler,
-  cliConst,
   gameState;
 
 type
@@ -39,6 +38,7 @@ end;
 
 procedure CLIQuitStateHandlerClass.display;
 begin
+  inherited display;
   globalWriter.addLine('Are you sure you want to quit?');
 end;
 

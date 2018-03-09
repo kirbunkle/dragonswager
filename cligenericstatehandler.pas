@@ -9,8 +9,20 @@ uses
   SysUtils,
   cliObjectReference,
   cliWriter,
-  cliConst,
   gameState;
+
+const
+  STATE_UNKNOWN = 0;
+
+  // simple actions
+  STATE_CONFIRM     = 1;
+  STATE_CANCEL      = 2;
+  STATE_HELP        = 3;
+
+  // game states
+  STATE_MAINMENU    = 100;
+  STATE_TESTBATTLE  = 101;
+  STATE_QUIT        = 102;
 
 type
   CLIGenericStateHandlerClass = class
@@ -18,12 +30,16 @@ type
       mInputText      : TStringList;
       mCommandTable   : CLIObjectReferenceClass;
       mStateName      : string;
+      mAnnounced      : boolean;
+
+
     public
       constructor Create;
       destructor Destroy; override;
 
       procedure processInput(const text : string);
       procedure advanceState(const state : CLIGenericStateHandlerClass);
+      procedure announce;
       procedure showHelp;
       procedure displayName;
       procedure unknown;
@@ -53,6 +69,8 @@ begin
   mInputText.Delimiter := ' ';
   mCommandTable := CLIObjectReferenceClass.Create;
   mCommandTable.add(HELP_STR, STATE_HELP);
+  mAnnounced := false;
+  globalGameState.pushState(self);
 end;
 
 destructor CLIGenericStateHandlerClass.Destroy;
@@ -86,10 +104,19 @@ end;
 
 procedure CLIGenericStateHandlerClass.advanceState(const state : CLIGenericStateHandlerClass);
 begin
+  mAnnounced := false;
   mInputText.Delete(0);
   state.doAction;
   if mInputText.Count > 0 then begin
     state.processInput(mInputText.DelimitedText);
+  end;
+end;
+
+procedure CLIGenericStateHandlerClass.announce;
+begin
+  if not mAnnounced then begin
+    mAnnounced := true;
+    displayName;
   end;
 end;
 
@@ -137,13 +164,12 @@ end;
 
 procedure CLIGenericStateHandlerClass.doAction;
 begin
-  displayName;
-  globalGameState.pushState(self);
+  // by default do nothing
 end;
 
 procedure CLIGenericStateHandlerClass.display;
 begin
-  globalWriter.addLine('** CLIGenericStateHandlerClass.display called, nothing to display... **');
+  announce;
 end;
 
 
