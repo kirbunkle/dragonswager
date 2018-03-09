@@ -17,13 +17,16 @@ type
       destructor Destroy; override;
   end;
 
+var
+  globalDatabase : GameDatabaseClass = nil;
+
 implementation
 
 constructor GameDatabaseClass.Create;
 begin
   inherited Create;
   characters := TStringList.Create;
-  characters.LoadFromFile('characters.db');
+  characters.LoadFromFile('db/characters.db');
 end;
 
 destructor GameDatabaseClass.Destroy;
@@ -32,4 +35,3 @@ begin
 end;
 
 end.
-

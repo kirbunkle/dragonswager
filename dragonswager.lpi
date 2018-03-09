@@ -25,143 +25,20 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="28">
+    <Units Count="3">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="cligame.pas"/>
+        <Filename Value="game\gamedatabase.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="gameDatabase"/>
       </Unit1>
       <Unit2>
-        <Filename Value="clicontroller.pas"/>
+        <Filename Value="cli\clibeeeeeeeef.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="cliController"/>
       </Unit2>
-      <Unit3>
-        <Filename Value="inputactions.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="inputActions"/>
-      </Unit3>
-      <Unit4>
-        <Filename Value="cliwriter.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliWriter"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="inputaction.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="inputAction"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="character.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="utils.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="cligenericstatehandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliGenericStateHandler"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="cliobjectreference.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliObjectReference"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="cligenericactionhandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliGenericActionHandler"/>
-      </Unit10>
-      <Unit11>
-        <Filename Value="cliquitactionhandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliQuitActionHandler"/>
-      </Unit11>
-      <Unit12>
-        <Filename Value="gamebattlergroup.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="gameBattlerGroup"/>
-      </Unit12>
-      <Unit13>
-        <Filename Value="climenuactionhandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliMenuActionHandler"/>
-      </Unit13>
-      <Unit14>
-        <Filename Value="cliinfoactionhandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliInfoActionHandler"/>
-      </Unit14>
-      <Unit15>
-        <Filename Value="cliconfirmactionhandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliConfirmActionHandler"/>
-      </Unit15>
-      <Unit16>
-        <Filename Value="clicancelactionhandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliCancelActionHandler"/>
-      </Unit16>
-      <Unit17>
-        <Filename Value="cliuseactionhandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliUseActionHandler"/>
-      </Unit17>
-      <Unit18>
-        <Filename Value="climainmenustatehandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliMainMenuStateHandler"/>
-      </Unit18>
-      <Unit19>
-        <Filename Value="cliconfirmstatehandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliConfirmStateHandler"/>
-      </Unit19>
-      <Unit20>
-        <Filename Value="clicancelstatehandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliCancelStateHandler"/>
-      </Unit20>
-      <Unit21>
-        <Filename Value="cliquitstatehandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliQuitStateHandler"/>
-      </Unit21>
-      <Unit22>
-        <Filename Value="clihelpstatehandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliHelpStateHandler"/>
-      </Unit22>
-      <Unit23>
-        <Filename Value="clisimpleaction.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliSimpleAction"/>
-      </Unit23>
-      <Unit24>
-        <Filename Value="cliconst.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliConst"/>
-      </Unit24>
-      <Unit25>
-        <Filename Value="clibattleteststatehandler.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="cliBattleTestStateHandler"/>
-      </Unit25>
-      <Unit26>
-        <Filename Value="gameenemygroup.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="gameEnemyGroup"/>
-      </Unit26>
-      <Unit27>
-        <Filename Value="gamecharacter.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="gameCharacter"/>
-      </Unit27>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -171,7 +48,8 @@
       <Filename Value="dragonswager"/>
     </Target>
     <SearchPaths>
-      <IncludeFiles Value="$(ProjOutDir)"/>
+      <IncludeFiles Value="$(ProjOutDir);cli;game"/>
+      <OtherUnitFiles Value="game;cli"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
   </CompilerOptions>

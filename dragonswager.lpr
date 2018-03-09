@@ -8,10 +8,12 @@ uses
   gameState,
   cliMainMenuStateHandler,
   cliGenericStateHandler,
-  cliWriter;
+  cliWriter,
+  gameDatabase;
 
 procedure setup;
 begin
+  globalDatabase := GameDatabaseClass.Create;
   globalGameState := GameStateClass.Create;
   globalWriter := CLIWriterClass.Create;
 end;
@@ -20,6 +22,7 @@ procedure shutdown;
 begin
   FreeAndNil(globalWriter);
   FreeAndNil(globalGameState);
+  FreeAndNil(globalDatabase);
 end;
 
 procedure run;
