@@ -64,8 +64,9 @@ end;
 procedure CLIWriterClass.display;
 begin
   while globalWriter.displayNext do begin
-    Sleep(250);
+    Sleep(100);
   end;
+  Sleep(250);
 end;
 
 end.

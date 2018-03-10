@@ -8,7 +8,10 @@ uses
   Classes,
   sysutils,
   cliGenericStateHandler,
-  cliWriter;
+  gameState,
+  gameEnemyGroup,
+  gameCharacter,
+  cliTableWriter;
 
 type
   CLIBattleTestStateHandlerClass = class(CLIGenericStateHandlerClass)
@@ -34,16 +37,32 @@ begin
 end;
 
 procedure CLIBattleTestStateHandlerClass.display;
+var
+  enemyGroup  : GameEnemyGroupClass = nil;
+  enemy       : GameCharacterClass = nil;
+  i           : integer = 0;
+  tableWriter : CLITableWriterClass = nil;
 begin
   inherited display;
-  globalWriter.addLine('pen15');
+  tableWriter := CLITableWriterClass.Create;
+  try
+    enemyGroup := globalGameState.enemyGroup;
+    if enemyGroup <> nil then begin
+      for i := 0 to enemyGroup.count - 1 do begin
+        enemy := enemyGroup.getCharacter(i);
+        tableWriter.addElement('(' + IntToStr(i) + ') ' + enemy.name, 'HP: ' + IntToStr(enemy.hp));
+      end;
+      tableWriter.display;
+    end;
+  finally
+    FreeAndNil(tableWriter);
+  end;
 end;
 
 procedure CLIBattleTestStateHandlerClass.doAction;
 begin
   inherited doAction;
-  // let's set up some example bois
-
+  globalGameState.setupEnemyGroup;
 end;
 
 end.
