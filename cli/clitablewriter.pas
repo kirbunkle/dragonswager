@@ -75,7 +75,7 @@ begin
           rLen := Length(right);
           if rLen <> 0 then Inc(rLen); // we need an extra space for this if it exists
           curLen := Length(linesOut.Names[i]) + rLen + 7;
-          if curLen > maxLineWidth then begin // length includes = character, counted because we need a space
+          if curLen > maxLineWidth then begin
             left := LeftStr(linesOut.Names[i], maxLineWidth - (rLen + 10));
             left := left + '...';
             linesOut.Strings[i] := left + '=' + right;

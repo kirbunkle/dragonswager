@@ -1,41 +1,44 @@
-unit cliObjectReference;
+unit clicommandreference;
 
 {$mode objfpc}{$H+}
 
 interface
 
 uses
-  Classes, SysUtils, cliConst, fgl;
+  Classes, SysUtils, fgl;
 
 type
-  TObjectType = word;
+  TCommandType = word;
 
   TStringWordMap = specialize TFPGMap<String, word>;
 
-  CLIObjectReferenceClass = class
+  CLICommandReferenceClass = class
     private
       mMap : TStringWordMap;
 
       function findUnique(const nameIn : string) : integer;
       function findFirst(const nameIn : string) : integer;
-      function find(const objectTypeIn : TObjectType) : integer;
+      function find(const objectTypeIn : TCommandType) : integer;
     public
       constructor Create;
       destructor Destroy; override;
-      procedure add(const namesIn : string; const objectTypeIn : TObjectType);
-      procedure add(const namesIn : TStringList; const objectTypeIn : TObjectType);
-      function getUnique(const nameIn : string) : TObjectType;
-      function getFirst(const nameIn : string) : TObjectType;
+      procedure add(const namesIn : string; const objectTypeIn : TCommandType);
+      procedure add(const namesIn : TStringList; const objectTypeIn : TCommandType);
+      function getUnique(const nameIn : string) : TCommandType;
+      function getFirst(const nameIn : string) : TCommandType;
       procedure removeAll(const nameIn : string);
-      procedure remove(const objectTypeIn : TObjectType);
-      function contains(const objectTypeIn : TObjectType) : boolean;
+      procedure remove(const objectTypeIn : TCommandType);
+      function contains(const objectTypeIn : TCommandType) : boolean;
       function count : integer;
       function getOption(const index : integer) : string;
   end;
 
 implementation
 
-function CLIObjectReferenceClass.findUnique(const nameIn : string) : integer;
+uses
+  cliGenericStateHandler;
+
+function CLICommandReferenceClass.findUnique(const nameIn : string) : integer;
 var
   i          : integer = 0;
   loc        : integer = 0;
@@ -58,7 +61,7 @@ begin
   result := foundIndex;
 end;
 
-function CLIObjectReferenceClass.findFirst(const nameIn : string) : integer;
+function CLICommandReferenceClass.findFirst(const nameIn : string) : integer;
 var
   i          : integer = 0;
   loc        : integer = 0;
@@ -76,7 +79,7 @@ begin
   end;
 end;
 
-function CLIObjectReferenceClass.find(const objectTypeIn : TObjectType) : integer;
+function CLICommandReferenceClass.find(const objectTypeIn : TCommandType) : integer;
 var
   i : integer = 0;
 begin
@@ -89,21 +92,21 @@ begin
   end;
 end;
 
-constructor CLIObjectReferenceClass.Create;
+constructor CLICommandReferenceClass.Create;
 begin
   inherited Create;
   mMap := TStringWordMap.Create;
 end;
 
-destructor CLIObjectReferenceClass.Destroy;
+destructor CLICommandReferenceClass.Destroy;
 begin
   FreeAndNil(mMap);
   inherited Destroy;
 end;
 
-procedure CLIObjectReferenceClass.add(
+procedure CLICommandReferenceClass.add(
   const namesIn : string;
-  const objectTypeIn : TObjectType);
+  const objectTypeIn : TCommandType);
 var
   names : string = '';
 begin
@@ -111,15 +114,15 @@ begin
   mMap.Add(names, objectTypeIn);
 end;
 
-procedure CLIObjectReferenceClass.add(
+procedure CLICommandReferenceClass.add(
   const namesIn : TStringList;
-  const objectTypeIn : TObjectType);
+  const objectTypeIn : TCommandType);
 begin
   add(namesIn.CommaText, objectTypeIn);
 end;
 
-function CLIObjectReferenceClass.getUnique(
-  const nameIn : string) : TObjectType;
+function CLICommandReferenceClass.getUnique(
+  const nameIn : string) : TCommandType;
 var
   index : integer = -1;
 begin
@@ -128,8 +131,8 @@ begin
   if index >= 0 then result := mMap.Data[index];
 end;
 
-function CLIObjectReferenceClass.getFirst(
-  const nameIn : string) : TObjectType;
+function CLICommandReferenceClass.getFirst(
+  const nameIn : string) : TCommandType;
 var
   index : integer = -1;
 begin
@@ -138,7 +141,7 @@ begin
   if index >= 0 then result := mMap.Data[index];
 end;
 
-procedure CLIObjectReferenceClass.removeAll(const nameIn : string);
+procedure CLICommandReferenceClass.removeAll(const nameIn : string);
 var
   index : integer = -1;
 begin
@@ -152,7 +155,7 @@ begin
   end;
 end;
 
-procedure CLIObjectReferenceClass.remove(const objectTypeIn : TObjectType);
+procedure CLICommandReferenceClass.remove(const objectTypeIn : TCommandType);
 var
   index : integer = -1;
 begin
@@ -160,17 +163,17 @@ begin
   if index >= 0 then mMap.Delete(index);
 end;
 
-function CLIObjectReferenceClass.contains(const objectTypeIn : TObjectType) : boolean;
+function CLICommandReferenceClass.contains(const objectTypeIn : TCommandType) : boolean;
 begin
   result := find(objectTypeIn) >= 0;
 end;
 
-function CLIObjectReferenceClass.count : integer;
+function CLICommandReferenceClass.count : integer;
 begin
   result := mMap.Count;
 end;
 
-function CLIObjectReferenceClass.getOption(const index : integer) : string;
+function CLICommandReferenceClass.getOption(const index : integer) : string;
 begin
   result := mMap.Keys[index];
 end;

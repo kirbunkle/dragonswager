@@ -7,7 +7,7 @@ interface
 uses
   Classes,
   SysUtils,
-  cliObjectReference,
+  cliCommandReference,
   cliWriter,
   gameState;
 
@@ -23,15 +23,15 @@ const
   STATE_MAINMENU    = 100;
   STATE_TESTBATTLE  = 101;
   STATE_QUIT        = 102;
+  STATE_INFO        = 103;
 
 type
   CLIGenericStateHandlerClass = class
     protected
       mInputText      : TStringList;
-      mCommandTable   : CLIObjectReferenceClass;
+      mCommandTable   : CLICommandReferenceClass;
       mStateName      : string;
       mAnnounced      : boolean;
-
 
     public
       constructor Create;
@@ -46,9 +46,10 @@ type
 
       procedure confirm virtual;
       procedure cancel virtual;
-
       procedure doAction virtual;
       procedure display virtual;
+      function doSpecialCommand(const command : TCommandType) : boolean virtual;
+
   end;
 
 implementation
@@ -56,7 +57,8 @@ implementation
 uses
   cliMainMenuStateHandler,
   cliQuitStateHandler,
-  cliBattleTestStateHandler;
+  cliBattleTestStateHandler,
+  cliInfoStateHandler;
 
 const
   HELP_STR = 'options,help';
@@ -67,7 +69,7 @@ begin
   mStateName := '';
   mInputText := TStringList.Create;
   mInputText.Delimiter := ' ';
-  mCommandTable := CLIObjectReferenceClass.Create;
+  mCommandTable := CLICommandReferenceClass.Create;
   mCommandTable.add(HELP_STR, STATE_HELP);
   mAnnounced := false;
   globalGameState.pushState(self);
@@ -82,21 +84,22 @@ end;
 
 procedure CLIGenericStateHandlerClass.processInput(const text : string);
 var
-  state : TObjectType = STATE_UNKNOWN;
+  command : TCommandType = STATE_UNKNOWN;
 begin
   mInputText.Clear;
   mInputText.DelimitedText := text;
   if mInputText.Count > 0 then begin
-    state := mCommandTable.getUnique(mInputText.Strings[0]);
-    case state of
+    command := mCommandTable.getUnique(mInputText.Strings[0]);
+    case command of
       STATE_CONFIRM    : confirm;
       STATE_CANCEL     : cancel;
       STATE_HELP       : showHelp;
       STATE_MAINMENU   : advanceState(CLIMainMenuStateHandlerClass.Create);
       STATE_QUIT       : advanceState(CLIQuitStateHandlerClass.Create);
       STATE_TESTBATTLE : advanceState(CLIBattleTestStateHandlerClass.Create);
+      STATE_INFO       : advanceState(CLIInfoStateHandlerClass.Create);
       else begin
-        unknown;
+        if not doSpecialCommand(command) then unknown;
       end;
     end;
   end;
@@ -149,7 +152,7 @@ end;
 procedure CLIGenericStateHandlerClass.unknown;
 begin
   globalWriter.addLine('- UNKNOWN COMMAND -');
-  globalWriter.addLine('I don''t know what "' + mInputText.Strings[0] + '" means');
+  globalWriter.addLine('The command "' + mInputText.Strings[0] + '" doesn''t do anything here. (try "help" for options)');
 end;
 
 procedure CLIGenericStateHandlerClass.confirm;
@@ -159,7 +162,7 @@ end;
 
 procedure CLIGenericStateHandlerClass.cancel;
 begin
-  if self = globalGameState.currentState then globalGameState.popState;
+  globalGameState.popState;
 end;
 
 procedure CLIGenericStateHandlerClass.doAction;
@@ -170,6 +173,11 @@ end;
 procedure CLIGenericStateHandlerClass.display;
 begin
   announce;
+end;
+
+function CLIGenericStateHandlerClass.doSpecialCommand(const command : TCommandType) : boolean;
+begin
+  result := false;
 end;
 
 

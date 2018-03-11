@@ -7,6 +7,7 @@ interface
 uses
   Classes,
   sysutils,
+  cliGenericGameStateHandler,
   cliGenericStateHandler,
   gameState,
   gameEnemyGroup,
@@ -14,7 +15,7 @@ uses
   cliTableWriter;
 
 type
-  CLIBattleTestStateHandlerClass = class(CLIGenericStateHandlerClass)
+  CLIBattleTestStateHandlerClass = class(CLIGenericGameStateHandlerClass)
     public
       constructor Create;
       destructor Destroy; override;
@@ -28,7 +29,6 @@ constructor CLIBattleTestStateHandlerClass.Create;
 begin
   inherited Create;
   mStateName := 'BATTLE TEST';
-  mCommandTable.add('quit', STATE_QUIT);
 end;
 
 destructor CLIBattleTestStateHandlerClass.Destroy;
@@ -50,7 +50,7 @@ begin
     if enemyGroup <> nil then begin
       for i := 0 to enemyGroup.count - 1 do begin
         enemy := enemyGroup.getCharacter(i);
-        tableWriter.addElement('(' + IntToStr(i) + ') ' + enemy.name, 'HP: ' + IntToStr(enemy.hp));
+        tableWriter.addElement('(' + IntToStr(i + 1) + ') ' + enemy.name, 'HP: ' + IntToStr(enemy.hp));
       end;
       tableWriter.display;
     end;

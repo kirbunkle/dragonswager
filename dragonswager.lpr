@@ -9,7 +9,7 @@ uses
   cliMainMenuStateHandler,
   cliGenericStateHandler,
   cliWriter,
-  gameDatabase, cliTableWriter;
+  gameDatabase, cliTableWriter, cliInfoStateHandler, cliGenericGameStateHandler;
 
 procedure setup;
 begin

@@ -7,7 +7,6 @@ interface
 uses
   Classes,
   sysutils,
-  cliObjectReference,
   cliWriter,
   cliGenericStateHandler,
   gameState;
