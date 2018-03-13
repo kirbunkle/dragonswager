@@ -25,7 +25,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="6">
+    <Units Count="8">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -54,6 +54,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliGenericGameStateHandler"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="cli\cliinteractablereference.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliInteractableReference"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="cli\cligenerictargetablestatehandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cliGenericTargetableStateHandler"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

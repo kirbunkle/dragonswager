@@ -3,23 +3,21 @@ program dragonswager;
 {$mode objfpc}{$H+}
 
 uses
-  Classes,
-  sysutils,
-  gameState,
-  cliMainMenuStateHandler,
-  cliGenericStateHandler,
-  cliWriter,
-  gameDatabase, cliTableWriter, cliInfoStateHandler, cliGenericGameStateHandler;
+  Classes, sysutils, gameState, cliMainMenuStateHandler, cliGenericStateHandler,
+  cliWriter, gameDatabase, cliTableWriter, cliInfoStateHandler,
+  cliGenericGameStateHandler, cliInteractableReference, cliGenericTargetableStateHandler;
 
 procedure setup;
 begin
   globalDatabase := GameDatabaseClass.Create;
   globalGameState := GameStateClass.Create;
   globalWriter := CLIWriterClass.Create;
+  globalInteractableRef := CLIInteractableReferenceClass.Create;
 end;
 
 procedure shutdown;
 begin
+  FreeAndNil(globalInteractableRef);
   FreeAndNil(globalWriter);
   FreeAndNil(globalGameState);
   FreeAndNil(globalDatabase);

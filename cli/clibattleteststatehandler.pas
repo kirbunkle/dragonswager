@@ -10,12 +10,18 @@ uses
   cliGenericGameStateHandler,
   cliGenericStateHandler,
   gameState,
-  gameEnemyGroup,
+  gameCharacterGroup,
   gameCharacter,
-  cliTableWriter;
+  cliTableWriter,
+  cliInteractableReference,
+  cliWriter;
 
 type
   CLIBattleTestStateHandlerClass = class(CLIGenericGameStateHandlerClass)
+    private
+      procedure displayGroup(
+        const group     : GameCharacterGroupClass;
+        const interType : TInteractableType);
     public
       constructor Create;
       destructor Destroy; override;
@@ -24,6 +30,30 @@ type
   end;
 
 implementation
+
+procedure CLIBattleTestStateHandlerClass.displayGroup(
+  const group     : GameCharacterGroupClass;
+  const interType : TInteractableType);
+var
+  character   : GameCharacterClass = nil;
+  i           : integer = 0;
+  tableWriter : CLITableWriterClass = nil;
+  indexString : string = '';
+begin
+  if group <> nil then begin
+    tableWriter := CLITableWriterClass.Create;
+    try
+      for i := 0 to group.count - 1 do begin
+        character := group.getCharacter(i);
+        tableWriter.addElement('(' + globalInteractableRef.getRef(i, interType) + ') '
+          + character.name, 'HP: ' + IntToStr(character.hp));
+      end;
+      tableWriter.display;
+    finally
+      FreeAndNil(tableWriter);
+    end;
+  end;
+end;
 
 constructor CLIBattleTestStateHandlerClass.Create;
 begin
@@ -37,32 +67,21 @@ begin
 end;
 
 procedure CLIBattleTestStateHandlerClass.display;
-var
-  enemyGroup  : GameEnemyGroupClass = nil;
-  enemy       : GameCharacterClass = nil;
-  i           : integer = 0;
-  tableWriter : CLITableWriterClass = nil;
+
 begin
   inherited display;
-  tableWriter := CLITableWriterClass.Create;
-  try
-    enemyGroup := globalGameState.enemyGroup;
-    if enemyGroup <> nil then begin
-      for i := 0 to enemyGroup.count - 1 do begin
-        enemy := enemyGroup.getCharacter(i);
-        tableWriter.addElement('(' + IntToStr(i + 1) + ') ' + enemy.name, 'HP: ' + IntToStr(enemy.hp));
-      end;
-      tableWriter.display;
-    end;
-  finally
-    FreeAndNil(tableWriter);
-  end;
+  displayGroup(globalGameState.enemyGroup, it_enemy);
+  globalWriter.addLine('');
+  globalWriter.addLine(' *** VERSUS *** ');
+  globalWriter.addLine('');
+  displayGroup(globalGameState.heroGroup, it_hero);
 end;
 
 procedure CLIBattleTestStateHandlerClass.doAction;
 begin
   inherited doAction;
   globalGameState.setupEnemyGroup;
+  globalGameState.setupHeroGroup;
 end;
 
 end.

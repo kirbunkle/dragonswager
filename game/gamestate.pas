@@ -5,14 +5,15 @@ unit gameState;
 interface
 
 uses
-  Classes, SysUtils, gameEnemyGroup;
+  Classes, SysUtils, gameCharacterGroup;
 
 type
   GameStateClass = class
     private
       mStateStack : TList;
       mCount      : integer;
-      mEnemyGroup : GameEnemyGroupClass;
+      mEnemyGroup : GameCharacterGroupClass;
+      mHeroGroup  : GameCharacterGroupClass;
 
       procedure cleanUp;
     public
@@ -23,7 +24,9 @@ type
       function currentState : TObject;
       procedure clearStates;
       procedure setupEnemyGroup;
-      property enemyGroup : GameEnemyGroupClass read mEnemyGroup;
+      procedure setupHeroGroup;
+      property enemyGroup : GameCharacterGroupClass read mEnemyGroup;
+      property heroGroup : GameCharacterGroupClass read mHeroGroup;
     end;
 
 var
@@ -55,6 +58,7 @@ end;
 destructor GameStateClass.Destroy;
 begin
   if mEnemyGroup <> nil then FreeAndNil(mEnemyGroup);
+  if mHeroGroup <> nil then FreeAndNil(mHeroGroup);
   clearStates;
   FreeAndNil(mStateStack);
   inherited Destroy;
@@ -87,7 +91,13 @@ end;
 procedure GameStateClass.setupEnemyGroup;
 begin
   if mEnemyGroup <> nil then FreeAndNil(mEnemyGroup);
-  mEnemyGroup := GameEnemyGroupClass.Create;
+  mEnemyGroup := GameCharacterGroupClass.Create('1,1,1,1');
+end;
+
+procedure GameStateClass.setupHeroGroup;
+begin
+  if mHeroGroup <> nil then FreeAndNil(mHeroGroup);
+  mHeroGroup := GameCharacterGroupClass.Create('2,3,4,5');
 end;
 
 end.

@@ -31,6 +31,7 @@ type
       function contains(const objectTypeIn : TCommandType) : boolean;
       function count : integer;
       function getOption(const index : integer) : string;
+      procedure clear;
   end;
 
 implementation
@@ -176,6 +177,11 @@ end;
 function CLICommandReferenceClass.getOption(const index : integer) : string;
 begin
   result := mMap.Keys[index];
+end;
+
+procedure CLICommandReferenceClass.clear;
+begin
+  mMap.Clear;
 end;
 
 end.

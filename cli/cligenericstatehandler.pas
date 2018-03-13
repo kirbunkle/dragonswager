@@ -40,7 +40,7 @@ type
       procedure processInput(const text : string);
       procedure advanceState(const state : CLIGenericStateHandlerClass);
       procedure announce;
-      procedure showHelp;
+      procedure showHelp virtual;
       procedure displayName;
       procedure unknown;
 
@@ -48,7 +48,7 @@ type
       procedure cancel virtual;
       procedure doAction virtual;
       procedure display virtual;
-      function doSpecialCommand(const command : TCommandType) : boolean virtual;
+      function selectTarget(const reference : string) : boolean virtual;
 
   end;
 
@@ -99,7 +99,7 @@ begin
       STATE_TESTBATTLE : advanceState(CLIBattleTestStateHandlerClass.Create);
       STATE_INFO       : advanceState(CLIInfoStateHandlerClass.Create);
       else begin
-        if not doSpecialCommand(command) then unknown;
+        if not selectTarget(mInputText.Strings[0]) then unknown;
       end;
     end;
   end;
@@ -175,7 +175,7 @@ begin
   announce;
 end;
 
-function CLIGenericStateHandlerClass.doSpecialCommand(const command : TCommandType) : boolean;
+function CLIGenericStateHandlerClass.selectTarget(const reference : string) : boolean;
 begin
   result := false;
 end;

@@ -10,9 +10,10 @@ uses
 type
   GameCharacterClass = class
     private
-      mName : string;
-      mHP   : integer;
-      mDesc : string;
+      mName  : string;
+      mHP    : integer;
+      mDesc  : string;
+      mClass : string;
 
     public
       constructor Create(const id : string);
@@ -35,8 +36,9 @@ begin
     data.Delimiter := ',';
     data.CommaText := globalDatabase.getData(DB_TYPE_CHARACTER, id);
     mName       := data.Strings[0];
-    mHP         := StrToInt(data.Strings[1]);
-    description := data.Strings[2];
+    mClass      := data.Strings[1];
+    mHP         := StrToInt(data.Strings[2]);
+    mDesc       := data.Strings[3];
   finally
     FreeAndNil(data);
   end;
