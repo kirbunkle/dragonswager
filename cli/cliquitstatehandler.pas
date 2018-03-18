@@ -9,7 +9,8 @@ uses
   sysutils,
   cliWriter,
   cliGenericStateHandler,
-  gameState;
+  gameState,
+  commonConstType;
 
 type
   CLIQuitStateHandlerClass = class(CLIGenericStateHandlerClass)

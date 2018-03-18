@@ -14,7 +14,8 @@ uses
   gameCharacter,
   cliTableWriter,
   cliInteractableReference,
-  cliWriter;
+  cliWriter,
+  commonConstType;
 
 type
   CLIBattleTestStateHandlerClass = class(CLIGenericGameStateHandlerClass)
@@ -38,7 +39,6 @@ var
   character   : GameCharacterClass = nil;
   i           : integer = 0;
   tableWriter : CLITableWriterClass = nil;
-  indexString : string = '';
 begin
   if group <> nil then begin
     tableWriter := CLITableWriterClass.Create;

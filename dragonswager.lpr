@@ -5,7 +5,8 @@ program dragonswager;
 uses
   Classes, sysutils, gameState, cliMainMenuStateHandler, cliGenericStateHandler,
   cliWriter, gameDatabase, cliTableWriter, cliInfoStateHandler,
-  cliGenericGameStateHandler, cliInteractableReference, cliGenericTargetableStateHandler;
+  cliGenericGameStateHandler, cliInteractableReference,
+  cliGenericTargetableStateHandler, gameDeck, commonConstType, gameCardIceBall;
 
 procedure setup;
 begin

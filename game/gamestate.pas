@@ -5,15 +5,16 @@ unit gameState;
 interface
 
 uses
-  Classes, SysUtils, gameCharacterGroup;
+  Classes, SysUtils, gameCharacterGroup, gameDeck;
 
 type
   GameStateClass = class
     private
-      mStateStack : TList;
-      mCount      : integer;
-      mEnemyGroup : GameCharacterGroupClass;
-      mHeroGroup  : GameCharacterGroupClass;
+      mStateStack  : TList;
+      mCount       : integer;
+      mEnemyGroup  : GameCharacterGroupClass;
+      mHeroGroup   : GameCharacterGroupClass;
+      mCardZones   : GameDeckClass;
 
       procedure cleanUp;
     public
@@ -51,8 +52,10 @@ constructor GameStateClass.Create;
 begin
   inherited Create;
   mStateStack := TList.Create;
+  mCardZones := GameDeckClass.Create;
   mCount := 0;
   mEnemyGroup := nil;
+  mHeroGroup := nil;
 end;
 
 destructor GameStateClass.Destroy;
@@ -60,6 +63,7 @@ begin
   if mEnemyGroup <> nil then FreeAndNil(mEnemyGroup);
   if mHeroGroup <> nil then FreeAndNil(mHeroGroup);
   clearStates;
+  FreeAndNil(mCardZones);
   FreeAndNil(mStateStack);
   inherited Destroy;
 end;

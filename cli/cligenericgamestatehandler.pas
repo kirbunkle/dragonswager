@@ -7,7 +7,8 @@ interface
 uses
   Classes,
   SysUtils,
-  cliGenericStateHandler;
+  cliGenericStateHandler,
+  commonConstType;
 
 type
   CLIGenericGameStateHandlerClass = class(CLIGenericStateHandlerClass)

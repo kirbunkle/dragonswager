@@ -9,21 +9,8 @@ uses
   SysUtils,
   cliCommandReference,
   cliWriter,
+  commonConstType,
   gameState;
-
-const
-  STATE_UNKNOWN = 0;
-
-  // simple actions
-  STATE_CONFIRM     = 1;
-  STATE_CANCEL      = 2;
-  STATE_HELP        = 3;
-
-  // game states
-  STATE_MAINMENU    = 100;
-  STATE_TESTBATTLE  = 101;
-  STATE_QUIT        = 102;
-  STATE_INFO        = 103;
 
 type
   CLIGenericStateHandlerClass = class

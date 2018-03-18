@@ -7,7 +7,8 @@ interface
 uses
   Classes,
   sysutils,
-  cliGenericStateHandler;
+  cliGenericStateHandler,
+  commonConstType;
 
 type
   CLIMainMenuStateHandlerClass = class(CLIGenericStateHandlerClass)

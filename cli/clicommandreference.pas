@@ -5,7 +5,7 @@ unit clicommandreference;
 interface
 
 uses
-  Classes, SysUtils, fgl;
+  Classes, SysUtils, fgl, commonConstType;
 
 type
   TCommandType = word;
@@ -35,9 +35,6 @@ type
   end;
 
 implementation
-
-uses
-  cliGenericStateHandler;
 
 function CLICommandReferenceClass.findUnique(const nameIn : string) : integer;
 var

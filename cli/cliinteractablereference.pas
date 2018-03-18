@@ -5,16 +5,9 @@ unit cliInteractableReference;
 interface
 
 uses
-  Classes, SysUtils, clicommandreference, gameCharacter, gameCharacterGroup, gameState;
+  Classes, SysUtils, gameCharacter, gameCharacterGroup, gameState, commonConstType;
 
 type
-  TInteractableType = (it_hero, it_enemy, it_card);
-
-const
-  ALL_INTERACTABLE_TYPES = [it_hero, it_enemy, it_card];
-
-type
-
   CLIInteractableReferenceClass = class
     public
       constructor Create;

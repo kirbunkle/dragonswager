@@ -10,7 +10,8 @@ uses
   cliGenericStateHandler,
   cliInteractableReference,
   cliWriter,
-  gameState;
+  gameState,
+  commonConstType;
 
 type
   TInteractibleTypeSet = set of TInteractableType;

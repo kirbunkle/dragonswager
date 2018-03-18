@@ -12,7 +12,8 @@ uses
   cliCommandReference,
   cliInteractableReference,
   cliGenericTargetableStateHandler,
-  cliWriter;
+  cliWriter,
+  commonConstType;
 
 type
   CLIInfoStateHandlerClass = class(CLIGenericTargetableStateHandlerClass)
