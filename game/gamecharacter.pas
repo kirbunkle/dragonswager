@@ -13,7 +13,7 @@ type
       mName  : string;
       mHP    : integer;
       mDesc  : string;
-      mClass : string;
+      mClass : byte;
 
     public
       constructor Create(const id : string);
@@ -33,10 +33,10 @@ begin
   data := TStringList.Create;
   try
     data.StrictDelimiter := true;
-    data.Delimiter := ',';
-    data.CommaText := globalDatabase.getData(DB_TYPE_CHARACTER, id);
+    data.Delimiter := '|';
+    data.DelimitedText := globalDatabase.getData(DB_TYPE_CHARACTER, id);
     mName       := data.Strings[0];
-    mClass      := data.Strings[1];
+    mClass      := StrToInt(data.Strings[1]);
     mHP         := StrToInt(data.Strings[2]);
     mDesc       := data.Strings[3];
   finally

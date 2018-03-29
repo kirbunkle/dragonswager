@@ -8,13 +8,15 @@ uses
   Classes,
   SysUtils,
   cliGenericStateHandler,
-  commonConstType;
+  commonConstType,
+  gameState;
 
 type
   CLIGenericGameStateHandlerClass = class(CLIGenericStateHandlerClass)
   public
     constructor Create;
     destructor Destroy; override;
+    procedure display; override;
 end;
 
 implementation
@@ -30,6 +32,12 @@ end;
 destructor CLIGenericGameStateHandlerClass.Destroy;
 begin
   inherited Destroy;
+end;
+
+procedure CLIGenericGameStateHandlerClass.display;
+begin
+  inherited display;
+  globalGameState.cardZones.cleanup;
 end;
 
 end.

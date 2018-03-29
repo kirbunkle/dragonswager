@@ -4,45 +4,47 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="70">
+    <Units Count="74">
       <Unit0>
         <Filename Value="dragonswager.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="44" Y="12"/>
-        <UsageCount Value="150"/>
+        <CursorPos X="27" Y="36"/>
+        <UsageCount Value="156"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="game\gamedatabase.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="gameDatabase"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="16"/>
-        <CursorPos X="61" Y="45"/>
-        <UsageCount Value="45"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="20"/>
+        <CursorPos X="37" Y="57"/>
+        <UsageCount Value="51"/>
+        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="cli\clibeeeeeeeef.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="45"/>
+        <UsageCount Value="51"/>
       </Unit2>
       <Unit3>
         <Filename Value="cli\clitablewriter.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliTableWriter"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="91"/>
-        <CursorPos X="23" Y="94"/>
-        <UsageCount Value="44"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="65"/>
+        <CursorPos X="32" Y="111"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="cli\cliinfostatehandler.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliInfoStateHandler"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <CursorPos X="18" Y="16"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -50,597 +52,627 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliGenericGameStateHandler"/>
         <EditorIndex Value="4"/>
-        <CursorPos X="18" Y="11"/>
-        <UsageCount Value="34"/>
+        <CursorPos X="12" Y="39"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="cli\cliinteractablereference.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliInteractableReference"/>
-        <EditorIndex Value="11"/>
-        <TopLine Value="2"/>
-        <CursorPos X="3" Y="29"/>
-        <UsageCount Value="28"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="7"/>
+        <CursorPos X="16" Y="15"/>
+        <UsageCount Value="34"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="cli\cligenerictargetablestatehandler.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="cliGenericTargetableStateHandler"/>
-        <EditorIndex Value="7"/>
-        <CursorPos X="18" Y="14"/>
-        <UsageCount Value="25"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="8"/>
+        <CursorPos X="62" Y="35"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
+        <Filename Value="game\gamedeck.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="gameDeck"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="114"/>
+        <CursorPos X="42" Y="164"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="commonconsttype.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="commonConstType"/>
+        <EditorIndex Value="18"/>
+        <CursorPos X="33" Y="17"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="game\card\gamecardiceball.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="gameCardIceBall"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="35" Y="25"/>
+        <UsageCount Value="27"/>
+      </Unit10>
+      <Unit11>
         <Filename Value="cligame.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15" Y="49"/>
-        <UsageCount Value="124"/>
-      </Unit8>
-      <Unit9>
+        <UsageCount Value="123"/>
+      </Unit11>
+      <Unit12>
         <Filename Value="clicontroller.pas"/>
         <UnitName Value="cliController"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="10" Y="41"/>
-        <UsageCount Value="124"/>
-      </Unit9>
-      <Unit10>
+        <UsageCount Value="123"/>
+      </Unit12>
+      <Unit13>
         <Filename Value="inputactions.pas"/>
         <UnitName Value="inputActions"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="124"/>
-      </Unit10>
-      <Unit11>
+        <UsageCount Value="123"/>
+      </Unit13>
+      <Unit14>
         <Filename Value="cliwriter.pas"/>
         <UnitName Value="cliWriter"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="12"/>
         <CursorPos X="94" Y="25"/>
-        <UsageCount Value="124"/>
-      </Unit11>
-      <Unit12>
+        <UsageCount Value="123"/>
+      </Unit14>
+      <Unit15>
         <Filename Value="inputaction.pas"/>
         <UnitName Value="inputAction"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="43" Y="35"/>
-        <UsageCount Value="124"/>
-      </Unit12>
-      <Unit13>
+        <UsageCount Value="123"/>
+      </Unit15>
+      <Unit16>
         <Filename Value="character.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="12"/>
-        <UsageCount Value="124"/>
-      </Unit13>
-      <Unit14>
+        <UsageCount Value="123"/>
+      </Unit16>
+      <Unit17>
         <Filename Value="utils.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="9" Y="50"/>
-        <UsageCount Value="121"/>
-      </Unit14>
-      <Unit15>
+        <UsageCount Value="120"/>
+      </Unit17>
+      <Unit18>
         <Filename Value="cligenericstatehandler.pas"/>
         <UnitName Value="cliGenericStateHandler"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="67"/>
         <CursorPos X="14" Y="11"/>
-        <UsageCount Value="121"/>
-      </Unit15>
-      <Unit16>
+        <UsageCount Value="120"/>
+      </Unit18>
+      <Unit19>
         <Filename Value="cliobjectreference.pas"/>
         <UnitName Value="cliObjectReference"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="71" Y="45"/>
-        <UsageCount Value="117"/>
-      </Unit16>
-      <Unit17>
+        <UsageCount Value="116"/>
+      </Unit19>
+      <Unit20>
         <Filename Value="cligenericactionhandler.pas"/>
         <UnitName Value="cliGenericActionHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="14" Y="12"/>
-        <UsageCount Value="115"/>
-      </Unit17>
-      <Unit18>
+        <UsageCount Value="114"/>
+      </Unit20>
+      <Unit21>
         <Filename Value="cliquitactionhandler.pas"/>
         <UnitName Value="cliQuitActionHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="19" Y="21"/>
-        <UsageCount Value="115"/>
-      </Unit18>
-      <Unit19>
+        <UsageCount Value="114"/>
+      </Unit21>
+      <Unit22>
         <Filename Value="gamebattlergroup.pas"/>
         <UnitName Value="gameBattlerGroup"/>
-        <UsageCount Value="19"/>
-      </Unit19>
-      <Unit20>
+        <UsageCount Value="18"/>
+      </Unit22>
+      <Unit23>
         <Filename Value="climenuactionhandler.pas"/>
         <UnitName Value="cliMenuActionHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="31" Y="32"/>
-        <UsageCount Value="115"/>
-      </Unit20>
-      <Unit21>
+        <UsageCount Value="114"/>
+      </Unit23>
+      <Unit24>
         <Filename Value="cliinfoactionhandler.pas"/>
         <UnitName Value="cliInfoActionHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="10" Y="5"/>
-        <UsageCount Value="115"/>
-      </Unit21>
-      <Unit22>
+        <UsageCount Value="114"/>
+      </Unit24>
+      <Unit25>
         <Filename Value="cliconfirmactionhandler.pas"/>
         <UnitName Value="cliConfirmActionHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="10" Y="5"/>
-        <UsageCount Value="115"/>
-      </Unit22>
-      <Unit23>
+        <UsageCount Value="114"/>
+      </Unit25>
+      <Unit26>
         <Filename Value="clicancelactionhandler.pas"/>
         <UnitName Value="cliCancelActionHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="57" Y="29"/>
-        <UsageCount Value="115"/>
-      </Unit23>
-      <Unit24>
+        <UsageCount Value="114"/>
+      </Unit26>
+      <Unit27>
         <Filename Value="cliuseactionhandler.pas"/>
         <UnitName Value="cliUseActionHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="25" Y="32"/>
-        <UsageCount Value="115"/>
-      </Unit24>
-      <Unit25>
+        <UsageCount Value="114"/>
+      </Unit27>
+      <Unit28>
         <Filename Value="climainmenustatehandler.pas"/>
         <UnitName Value="cliMainMenuStateHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="25" Y="31"/>
-        <UsageCount Value="109"/>
-      </Unit25>
-      <Unit26>
+        <UsageCount Value="108"/>
+      </Unit28>
+      <Unit29>
         <Filename Value="cliconfirmstatehandler.pas"/>
         <UnitName Value="cliConfirmStateHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="58" Y="26"/>
-        <UsageCount Value="106"/>
-      </Unit26>
-      <Unit27>
+        <UsageCount Value="105"/>
+      </Unit29>
+      <Unit30>
         <Filename Value="clicancelstatehandler.pas"/>
         <UnitName Value="cliCancelStateHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="60" Y="28"/>
-        <UsageCount Value="106"/>
-      </Unit27>
-      <Unit28>
+        <UsageCount Value="105"/>
+      </Unit30>
+      <Unit31>
         <Filename Value="cliquitstatehandler.pas"/>
         <UnitName Value="cliQuitStateHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="29" Y="12"/>
-        <UsageCount Value="106"/>
-      </Unit28>
-      <Unit29>
+        <UsageCount Value="105"/>
+      </Unit31>
+      <Unit32>
         <Filename Value="clihelpstatehandler.pas"/>
         <UnitName Value="cliHelpStateHandler"/>
-        <UsageCount Value="19"/>
-      </Unit29>
-      <Unit30>
+        <UsageCount Value="18"/>
+      </Unit32>
+      <Unit33>
         <Filename Value="clisimpleaction.pas"/>
         <UnitName Value="cliSimpleAction"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="31" Y="8"/>
-        <UsageCount Value="33"/>
-      </Unit30>
-      <Unit31>
+        <UsageCount Value="32"/>
+      </Unit33>
+      <Unit34>
         <Filename Value="cliconst.pas"/>
         <UnitName Value="cliConst"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="10"/>
-        <UsageCount Value="19"/>
-      </Unit31>
-      <Unit32>
+        <UsageCount Value="18"/>
+      </Unit34>
+      <Unit35>
         <Filename Value="clibattleteststatehandler.pas"/>
         <UnitName Value="cliBattleTestStateHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="29" Y="10"/>
-        <UsageCount Value="19"/>
-      </Unit32>
-      <Unit33>
+        <UsageCount Value="18"/>
+      </Unit35>
+      <Unit36>
         <Filename Value="gameenemygroup.pas"/>
         <UnitName Value="gameEnemyGroup"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="43" Y="32"/>
-        <UsageCount Value="19"/>
-      </Unit33>
-      <Unit34>
+        <UsageCount Value="18"/>
+      </Unit36>
+      <Unit37>
         <Filename Value="gamecharacter.pas"/>
         <UnitName Value="gameCharacter"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="19"/>
-      </Unit34>
-      <Unit35>
+        <UsageCount Value="18"/>
+      </Unit37>
+      <Unit38>
         <Filename Value="gamestate.pas"/>
         <UnitName Value="gameState"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="76" Y="12"/>
-        <UsageCount Value="115"/>
-      </Unit35>
-      <Unit36>
+        <UsageCount Value="114"/>
+      </Unit38>
+      <Unit39>
         <Filename Value="..\..\NitroVision\branches\siem\database\library\src\nitro.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="12005"/>
         <CursorPos X="9" Y="12009"/>
-        <UsageCount Value="69"/>
-      </Unit36>
-      <Unit37>
+        <UsageCount Value="68"/>
+      </Unit39>
+      <Unit40>
         <Filename Value="..\..\NitroVision\branches\siem\NVServer\shared\OpCodes.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="262"/>
         <CursorPos X="60" Y="298"/>
-        <UsageCount Value="69"/>
-      </Unit37>
-      <Unit38>
+        <UsageCount Value="68"/>
+      </Unit40>
+      <Unit41>
         <Filename Value="..\..\NitroVision\branches\siem\NVServer\libESSDB\src\em_securitycheck.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="393"/>
         <CursorPos X="15" Y="427"/>
-        <UsageCount Value="69"/>
-      </Unit38>
-      <Unit39>
+        <UsageCount Value="68"/>
+      </Unit41>
+      <Unit42>
         <Filename Value="baseobject.pas"/>
         <UnitName Value="baseObject"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="43" Y="12"/>
-        <UsageCount Value="60"/>
-      </Unit39>
-      <Unit40>
+        <UsageCount Value="59"/>
+      </Unit42>
+      <Unit43>
         <Filename Value="..\..\NitroVision\branches\siem\shared\CommonRoutinesUnit.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7175"/>
         <CursorPos X="25" Y="7210"/>
-        <UsageCount Value="67"/>
-      </Unit40>
-      <Unit41>
+        <UsageCount Value="66"/>
+      </Unit43>
+      <Unit44>
         <Filename Value="C:\usr\share\fpcsrc\rtl\objpas\classes\classesh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="646"/>
         <CursorPos X="78" Y="678"/>
-        <UsageCount Value="10"/>
-      </Unit41>
-      <Unit42>
+        <UsageCount Value="9"/>
+      </Unit44>
+      <Unit45>
         <Filename Value="C:\usr\share\fpcsrc\rtl\objpas\classes\stringl.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="633"/>
         <CursorPos X="26" Y="650"/>
-        <UsageCount Value="10"/>
-      </Unit42>
-      <Unit43>
+        <UsageCount Value="9"/>
+      </Unit45>
+      <Unit46>
         <Filename Value="..\..\NitroVision\branches\siem\database\library\src\syncindexlib.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5050"/>
         <CursorPos X="15" Y="5076"/>
-        <UsageCount Value="58"/>
-      </Unit43>
-      <Unit44>
+        <UsageCount Value="57"/>
+      </Unit46>
+      <Unit47>
         <Filename Value="clitestbattlestatehandler.pas"/>
         <UnitName Value="cliTestBattleStateHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="58" Y="50"/>
-        <UsageCount Value="70"/>
-      </Unit44>
-      <Unit45>
+        <UsageCount Value="69"/>
+      </Unit47>
+      <Unit48>
         <Filename Value="C:\usr\share\fpcsrc\rtl\objpas\sysutils\sysutilh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="95"/>
         <CursorPos X="29" Y="126"/>
-        <UsageCount Value="39"/>
-      </Unit45>
-      <Unit46>
+        <UsageCount Value="38"/>
+      </Unit48>
+      <Unit49>
         <Filename Value="C:\usr\share\fpcsrc\rtl\inc\systemh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1431"/>
         <CursorPos X="45" Y="1459"/>
-        <UsageCount Value="31"/>
-      </Unit46>
-      <Unit47>
+        <UsageCount Value="30"/>
+      </Unit49>
+      <Unit50>
         <Filename Value="gamedatabase.pas"/>
         <UnitName Value="gameDatabase"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="44" Y="26"/>
-        <UsageCount Value="9"/>
-      </Unit47>
-      <Unit48>
-        <Filename Value="db\characters.db"/>
-        <EditorIndex Value="17"/>
-        <CursorPos X="106" Y="5"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="None"/>
-      </Unit48>
-      <Unit49>
-        <Filename Value="game\gamecharacter.pas"/>
-        <UnitName Value="gameCharacter"/>
-        <EditorIndex Value="13"/>
-        <CursorPos X="37" Y="38"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-      </Unit49>
-      <Unit50>
-        <Filename Value="game\gamecharactergroup.pas"/>
-        <UnitName Value="gameCharacterGroup"/>
-        <EditorIndex Value="12"/>
-        <CursorPos X="85" Y="7"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="8"/>
       </Unit50>
       <Unit51>
-        <Filename Value="game\gamestate.pas"/>
-        <UnitName Value="gameState"/>
-        <EditorIndex Value="14"/>
-        <TopLine Value="25"/>
-        <CursorPos X="22" Y="65"/>
-        <UsageCount Value="22"/>
+        <Filename Value="db\statusEffects.db"/>
+        <EditorIndex Value="21"/>
+        <CursorPos X="22"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
       </Unit51>
       <Unit52>
-        <Filename Value="cli\clibattleteststatehandler.pas"/>
-        <UnitName Value="cliBattleTestStateHandler"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="35"/>
-        <CursorPos X="34" Y="84"/>
-        <UsageCount Value="22"/>
+        <Filename Value="game\gamecharacter.pas"/>
+        <UnitName Value="gameCharacter"/>
+        <EditorIndex Value="15"/>
+        <CursorPos X="34" Y="8"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit52>
       <Unit53>
-        <Filename Value="cli\cligenericstatehandler.pas"/>
-        <UnitName Value="cliGenericStateHandler"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="80" Y="47"/>
-        <UsageCount Value="16"/>
+        <Filename Value="game\gamecharactergroup.pas"/>
+        <UnitName Value="gameCharacterGroup"/>
+        <EditorIndex Value="14"/>
+        <CursorPos X="33" Y="34"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit53>
       <Unit54>
-        <Filename Value="cli\climainmenustatehandler.pas"/>
-        <UnitName Value="cliMainMenuStateHandler"/>
-        <EditorIndex Value="15"/>
-        <CursorPos X="18" Y="11"/>
-        <UsageCount Value="10"/>
+        <Filename Value="game\gamestate.pas"/>
+        <UnitName Value="gameState"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="57"/>
+        <CursorPos X="17" Y="113"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit54>
       <Unit55>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <UnitName Value="cliBattleTestStateHandler"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="54"/>
+        <CursorPos X="12" Y="94"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="cli\cligenericstatehandler.pas"/>
+        <UnitName Value="cliGenericStateHandler"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="112"/>
+        <CursorPos X="54" Y="35"/>
+        <UsageCount Value="19"/>
+        <Loaded Value="True"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="cli\climainmenustatehandler.pas"/>
+        <UnitName Value="cliMainMenuStateHandler"/>
+        <EditorIndex Value="17"/>
+        <CursorPos X="18" Y="11"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit57>
+      <Unit58>
         <Filename Value="cli\clicommandreference.pas"/>
         <EditorIndex Value="3"/>
         <TopLine Value="13"/>
         <CursorPos X="29" Y="37"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
-      </Unit55>
-      <Unit56>
+      </Unit58>
+      <Unit59>
         <Filename Value="cli\cliquitstatehandler.pas"/>
         <UnitName Value="cliQuitStateHandler"/>
         <EditorIndex Value="2"/>
         <CursorPos X="18" Y="13"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
-      </Unit56>
-      <Unit57>
+      </Unit59>
+      <Unit60>
         <Filename Value="cli\cliwriter.pas"/>
         <UnitName Value="cliWriter"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="41" Y="58"/>
-        <UsageCount Value="15"/>
-      </Unit57>
-      <Unit58>
+        <UsageCount Value="14"/>
+      </Unit60>
+      <Unit61>
         <Filename Value="dragonswager.lpi"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="46" Y="42"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="XML"/>
-      </Unit58>
-      <Unit59>
+      </Unit61>
+      <Unit62>
         <Filename Value="..\..\NitroVision\branches\siem\NVServer\libESSDB\ESSDB.lpi"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="46"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="XML"/>
-      </Unit59>
-      <Unit60>
+      </Unit62>
+      <Unit63>
         <Filename Value="..\..\NitroVision\branches\siem\NVServer\dbserverd\src\DBJobThreadUnit_insert.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1192"/>
         <CursorPos X="53" Y="1229"/>
-        <UsageCount Value="15"/>
-      </Unit60>
-      <Unit61>
+        <UsageCount Value="14"/>
+      </Unit63>
+      <Unit64>
         <Filename Value="..\..\NitroVision\branches\siem\NVServer\dbserverd\src\DBDevUnit.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="760"/>
         <CursorPos X="24" Y="807"/>
-        <UsageCount Value="15"/>
-      </Unit61>
-      <Unit62>
+        <UsageCount Value="14"/>
+      </Unit64>
+      <Unit65>
         <Filename Value="..\..\NitroVision\branches\siem\NVServer\dbserverd\src\DBAutoLearnUnit.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="249"/>
         <CursorPos X="19" Y="358"/>
-        <UsageCount Value="15"/>
-      </Unit62>
-      <Unit63>
+        <UsageCount Value="14"/>
+      </Unit65>
+      <Unit66>
         <Filename Value="C:\usr\share\fpcsrc\rtl\unix\sysunixh.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="11" Y="27"/>
-        <UsageCount Value="10"/>
-      </Unit63>
-      <Unit64>
-        <Filename Value="game\card\gamecardiceball.pas"/>
-        <UnitName Value="gameCardIceBall"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="120" Y="5"/>
-        <UsageCount Value="12"/>
-      </Unit64>
-      <Unit65>
+        <UsageCount Value="9"/>
+      </Unit66>
+      <Unit67>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\objpas\fgl.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="123"/>
         <CursorPos X="14" Y="149"/>
-        <UsageCount Value="10"/>
-      </Unit65>
-      <Unit66>
-        <Filename Value="game\gamedeck.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="gameDeck"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="40"/>
-        <CursorPos X="33" Y="28"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
-      </Unit66>
-      <Unit67>
-        <Filename Value="commonconsttype.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="commonConstType"/>
-        <EditorIndex Value="16"/>
-        <CursorPos X="52" Y="13"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="9"/>
       </Unit67>
       <Unit68>
-        <Filename Value="game\card\gamecardgeneric.pas"/>
-        <UnitName Value="gameCardGeneric"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="2"/>
-        <CursorPos X="30" Y="51"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
+        <Filename Value="game\card\gamecard.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="11" Y="14"/>
+        <UsageCount Value="9"/>
       </Unit68>
       <Unit69>
-        <Filename Value="game\card\gamecardiceball.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="gameCardIceBall"/>
-        <EditorIndex Value="10"/>
-        <CursorPos X="32" Y="26"/>
-        <UsageCount Value="21"/>
+        <Filename Value="game\gamecard.pas"/>
+        <UnitName Value="gameCard"/>
+        <EditorIndex Value="12"/>
+        <CursorPos X="60" Y="31"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit69>
+      <Unit70>
+        <Filename Value="db\classes.db"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="16" Y="4"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="db\cards.db"/>
+        <EditorIndex Value="19"/>
+        <CursorPos X="101" Y="3"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="db\characters.db"/>
+        <EditorIndex Value="20"/>
+        <CursorPos X="133" Y="3"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="..\..\..\..\usr\share\fpcsrc\rtl\inc\systemh.inc"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="767"/>
+        <CursorPos X="34" Y="800"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit73>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="cli\cliinfostatehandler.pas"/>
-        <Caret Line="49" Column="50" TopLine="11"/>
+        <Caret Line="16" Column="18"/>
       </Position1>
       <Position2>
-        <Filename Value="cli\cliinfostatehandler.pas"/>
-        <Caret Line="10" Column="28"/>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <Caret Line="82" Column="22" TopLine="29"/>
       </Position2>
       <Position3>
-        <Filename Value="game\card\gamecardgeneric.pas"/>
-        <Caret Line="11" Column="49"/>
+        <Filename Value="game\gamestate.pas"/>
+        <Caret Line="29" Column="17"/>
       </Position3>
       <Position4>
         <Filename Value="game\gamedeck.pas"/>
-        <Caret Line="56" Column="10" TopLine="7"/>
+        <Caret Line="100" Column="9" TopLine="59"/>
       </Position4>
       <Position5>
-        <Filename Value="game\gamestate.pas"/>
-        <Caret Line="12" Column="26"/>
+        <Filename Value="game\gamedeck.pas"/>
+        <Caret Line="104" Column="30"/>
       </Position5>
       <Position6>
-        <Filename Value="game\gamedeck.pas"/>
-        <Caret Line="84" Column="31" TopLine="34"/>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <Caret Line="59" Column="11" TopLine="20"/>
       </Position6>
       <Position7>
-        <Filename Value="game\gamedeck.pas"/>
-        <Caret Line="89" Column="20" TopLine="52"/>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <Caret Line="67" Column="5" TopLine="25"/>
       </Position7>
       <Position8>
-        <Filename Value="game\gamedeck.pas"/>
-        <Caret Line="82" Column="22" TopLine="31"/>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <Caret Line="96" Column="65" TopLine="49"/>
       </Position8>
       <Position9>
-        <Filename Value="cli\cliinteractablereference.pas"/>
-        <Caret Line="8" Column="104"/>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <Caret Line="71" Column="20" TopLine="34"/>
       </Position9>
       <Position10>
-        <Filename Value="game\card\gamecardgeneric.pas"/>
-        <Caret Line="8" Column="51"/>
+        <Filename Value="game\gamecard.pas"/>
+        <Caret Line="19" Column="38"/>
       </Position10>
       <Position11>
         <Filename Value="game\gamedeck.pas"/>
-        <Caret Line="28" Column="33"/>
+        <Caret Line="148" Column="24" TopLine="68"/>
       </Position11>
       <Position12>
-        <Filename Value="game\gamestate.pas"/>
-        <Caret Line="26" Column="72"/>
+        <Filename Value="cli\cligenericgamestatehandler.pas"/>
+        <Caret Line="39" Column="21"/>
       </Position12>
       <Position13>
-        <Filename Value="game\gamestate.pas"/>
-        <Caret Line="65" Column="22" TopLine="25"/>
+        <Filename Value="cli\cligenerictargetablestatehandler.pas"/>
+        <Caret Line="33" Column="44"/>
       </Position13>
       <Position14>
-        <Filename Value="cli\climainmenustatehandler.pas"/>
-        <Caret Line="11" Column="18"/>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <Caret Line="107" Column="27" TopLine="54"/>
       </Position14>
       <Position15>
-        <Filename Value="cli\cliquitstatehandler.pas"/>
-        <Caret Line="13" Column="18"/>
+        <Filename Value="game\gamestate.pas"/>
+        <Caret Line="99" Column="3" TopLine="57"/>
       </Position15>
       <Position16>
-        <Filename Value="game\card\gamecardgeneric.pas"/>
-        <Caret Line="8" Column="51"/>
+        <Filename Value="game\gamecharactergroup.pas"/>
+        <Caret Line="34" Column="33"/>
       </Position16>
       <Position17>
-        <Filename Value="cli\cligenerictargetablestatehandler.pas"/>
-        <Caret Line="14" Column="18"/>
+        <Filename Value="game\gamecard.pas"/>
+        <Caret Line="66" Column="31" TopLine="30"/>
       </Position17>
       <Position18>
-        <Filename Value="cli\clicommandreference.pas"/>
-        <Caret Line="8" Column="42"/>
+        <Filename Value="game\gamecard.pas"/>
+        <Caret Line="8" Column="37"/>
       </Position18>
       <Position19>
-        <Filename Value="cli\cliinteractablereference.pas"/>
-        <Caret Line="29" Column="3" TopLine="2"/>
+        <Filename Value="game\gamecharacter.pas"/>
+        <Caret Line="37" Column="23"/>
       </Position19>
       <Position20>
-        <Filename Value="cli\cliinteractablereference.pas"/>
-        <Caret Line="8" Column="22"/>
+        <Filename Value="game\gamedeck.pas"/>
+        <Caret Line="148" Column="27" TopLine="114"/>
       </Position20>
       <Position21>
-        <Filename Value="cli\clibattleteststatehandler.pas"/>
-        <Caret Line="41" Column="46" TopLine="15"/>
+        <Filename Value="game\gamedeck.pas"/>
+        <Caret Line="99" Column="32" TopLine="64"/>
       </Position21>
       <Position22>
-        <Filename Value="cli\cligenericstatehandler.pas"/>
-        <Caret Line="38" Column="35" TopLine="11"/>
+        <Filename Value="game\gamecard.pas"/>
+        <Caret Line="31" Column="60" TopLine="7"/>
       </Position22>
       <Position23>
-        <Filename Value="cli\clicommandreference.pas"/>
-        <Caret Line="37" Column="29" TopLine="13"/>
+        <Filename Value="cli\cligenericstatehandler.pas"/>
+        <Caret Line="37" Column="24" TopLine="16"/>
       </Position23>
       <Position24>
-        <Filename Value="cli\cliinteractablereference.pas"/>
-        <Caret Line="29" Column="3" TopLine="2"/>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <Caret Line="109" Column="14" TopLine="54"/>
       </Position24>
       <Position25>
-        <Filename Value="cli\cligenericstatehandler.pas"/>
-        <Caret Line="38" Column="35" TopLine="11"/>
+        <Filename Value="game\gamestate.pas"/>
+        <Caret Line="113" Column="50" TopLine="57"/>
       </Position25>
       <Position26>
-        <Filename Value="game\card\gamecardiceball.pas"/>
-        <Caret Line="22" Column="23"/>
+        <Filename Value="game\gamedeck.pas"/>
+        <Caret Line="18" Column="35" TopLine="9"/>
       </Position26>
       <Position27>
         <Filename Value="cli\clibattleteststatehandler.pas"/>
-        <Caret Line="84" Column="34" TopLine="35"/>
+        <Caret Line="51" Column="76" TopLine="40"/>
       </Position27>
       <Position28>
-        <Filename Value="game\card\gamecardgeneric.pas"/>
-        <Caret Line="8" Column="22"/>
+        <Filename Value="cli\clibattleteststatehandler.pas"/>
+        <Caret Line="94" Column="12" TopLine="54"/>
       </Position28>
       <Position29>
-        <Filename Value="game\card\gamecardiceball.pas"/>
-        <Caret Line="8" Column="22"/>
+        <Filename Value="cli\cligenericgamestatehandler.pas"/>
+        <Caret Line="39" Column="12"/>
       </Position29>
       <Position30>
-        <Filename Value="game\card\gamecardiceball.pas"/>
-        <Caret Line="26" Column="32"/>
+        <Filename Value="game\gamedeck.pas"/>
+        <Caret Line="30" Column="17"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

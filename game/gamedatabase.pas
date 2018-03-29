@@ -8,9 +8,11 @@ uses
   Classes, SysUtils;
 
 const
-  DB_TYPE_CHARACTER = 0;
+  DB_TYPE_CHARACTER     = 0;
+  DB_TYPE_CARD          = 1;
+  DB_TYPE_STATUS_EFFECT = 2;
 
-  NUM_OF_DB_TYPES = 1;
+  NUM_OF_DB_TYPES = 3;
 
 type
 
@@ -43,6 +45,8 @@ begin
     mData[i].Delimiter := ',';
   end;
   mData[DB_TYPE_CHARACTER].LoadFromFile('db/characters.db');
+  mData[DB_TYPE_CARD].LoadFromFile('db/cards.db');
+  mData[DB_TYPE_STATUS_EFFECT].LoadFromFile('db/statusEffects.db');
 end;
 
 destructor GameDatabaseClass.Destroy;

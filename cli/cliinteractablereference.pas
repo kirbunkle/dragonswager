@@ -14,7 +14,7 @@ type
       destructor Destroy; override;
       function getRef(
         const index  : integer;
-        const typeIn : TInteractableType) : string;
+        const typeIn : byte) : string;
       function getCharacter(const ref : string) : GameCharacterClass;
   end;
 
@@ -40,18 +40,19 @@ end;
 
 function CLIInteractableReferenceClass.getRef(
   const index  : integer;
-  const typeIn : TInteractableType) : string;
+  const typeIn : byte) : string;
 begin
   result := '';
   if index < 0 then exit;
   case typeIn of
-    it_hero : begin
-      if index >= Length(HERO_REF_CHARS) then exit;
-      result := HERO_REF_CHARS[index+1];
+    INTERACTABLE_TYPE_HERO : begin
+      if index < Length(HERO_REF_CHARS) then result := HERO_REF_CHARS[index+1];
     end;
-    it_enemy : begin
-      if index >= Length(ENEMY_REF_CHARS) then exit;
-      result := ENEMY_REF_CHARS[index+1];
+    INTERACTABLE_TYPE_ENEMY : begin
+      if index < Length(ENEMY_REF_CHARS) then result := ENEMY_REF_CHARS[index+1];
+    end;
+    INTERACTABLE_TYPE_CARD : begin
+      if index < Length(CARD_REF_CHARS) then result := CARD_REF_CHARS[index+1];
     end;
   end;
 end;

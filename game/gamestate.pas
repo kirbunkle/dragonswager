@@ -5,7 +5,7 @@ unit gameState;
 interface
 
 uses
-  Classes, SysUtils, gameCharacterGroup, gameDeck;
+  Classes, SysUtils, gameCharacterGroup, gameDeck, commonConstType;
 
 type
   GameStateClass = class
@@ -26,8 +26,10 @@ type
       procedure clearStates;
       procedure setupEnemyGroup;
       procedure setupHeroGroup;
+      procedure setupCards;
       property enemyGroup : GameCharacterGroupClass read mEnemyGroup;
       property heroGroup : GameCharacterGroupClass read mHeroGroup;
+      property cardZones : GameDeckClass read mCardZones;
     end;
 
 var
@@ -102,6 +104,13 @@ procedure GameStateClass.setupHeroGroup;
 begin
   if mHeroGroup <> nil then FreeAndNil(mHeroGroup);
   mHeroGroup := GameCharacterGroupClass.Create('2,3,4,5');
+end;
+
+procedure GameStateClass.setupCards;
+begin
+  if mCardZones <> nil then FreeAndNil(mCardZones);
+  mCardZones := GameDeckClass.Create;
+  mCardZones.add(gz_deck, '1,1,2,2,3,3');
 end;
 
 end.

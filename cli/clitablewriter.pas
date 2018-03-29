@@ -107,7 +107,8 @@ begin
 
           line := '| ' + left;
           line := AddCharR(' ', line, maxLen - (rLen + 4));
-          line := line + '-- ' + right + ' |';
+          if Length(right) > 0 then line := line + '-- ' + right + ' ';
+          line := line + '|';
 
           if j = 0 then begin
             linesToWrite.Add(horizLine);

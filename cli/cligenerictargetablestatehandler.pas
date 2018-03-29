@@ -14,7 +14,7 @@ uses
   commonConstType;
 
 type
-  TInteractibleTypeSet = set of TInteractableType;
+  TInteractibleTypeSet = set of byte;
 
   CLIGenericTargetableStateHandlerClass = class(CLIGenericStateHandlerClass)
     private
@@ -44,16 +44,22 @@ var
   i : integer = 0;
 begin
   inherited showHelp;
-  if it_hero in mValidInteractables then begin
+  if INTERACTABLE_TYPE_HERO in mValidInteractables then begin
     for i := 0 to globalGameState.heroGroup.count - 1 do begin
-      globalWriter.addLine('- ' + globalInteractableRef.getRef(i, it_hero) + ' (for hero #' + IntToStr(i+1) + ': ' +
+      globalWriter.addLine('- ' + globalInteractableRef.getRef(i, INTERACTABLE_TYPE_HERO) + ' (for hero #' + IntToStr(i+1) + ': ' +
         globalGameState.heroGroup.getCharacter(i).name + ')');
     end;
   end;
-  if it_enemy in mValidInteractables then begin
+  if INTERACTABLE_TYPE_ENEMY in mValidInteractables then begin
     for i := 0 to globalGameState.enemyGroup.count - 1 do begin
-      globalWriter.addLine('- ' + globalInteractableRef.getRef(i, it_enemy) + ' (for enemy #' + IntToStr(i+1) + ': ' +
+      globalWriter.addLine('- ' + globalInteractableRef.getRef(i, INTERACTABLE_TYPE_ENEMY) + ' (for enemy #' + IntToStr(i+1) + ': ' +
         globalGameState.enemyGroup.getCharacter(i).name + ')');
+    end;
+  end;
+  if INTERACTABLE_TYPE_CARD in mValidInteractables then begin
+    for i := 0 to globalGameState.cardZones.count(gz_hand) - 1 do begin
+      globalWriter.addLine('- ' + globalInteractableRef.getRef(i, INTERACTABLE_TYPE_CARD) + ' (for card #' + IntToStr(i+1) + ': ' +
+        globalGameState.cardZones.getCard(gz_hand, i).name + ')');
     end;
   end;
 end;

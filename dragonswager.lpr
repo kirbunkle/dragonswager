@@ -6,7 +6,7 @@ uses
   Classes, sysutils, gameState, cliMainMenuStateHandler, cliGenericStateHandler,
   cliWriter, gameDatabase, cliTableWriter, cliInfoStateHandler,
   cliGenericGameStateHandler, cliInteractableReference,
-  cliGenericTargetableStateHandler, gameDeck, commonConstType, gameCardIceBall;
+  cliGenericTargetableStateHandler, gameDeck, commonConstType;
 
 procedure setup;
 begin

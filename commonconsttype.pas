@@ -8,13 +8,9 @@ uses
   Classes, SysUtils;
 
 type
-  TGameClass = (gc_warrior, gc_thief, gc_wizard, gc_cleric, gc_ranger, gc_monk);
   TGameZone = (gz_unknown, gz_deck, gz_hand, gz_discard);
-  TInteractableType = (it_hero, it_enemy, it_card);
 
 const
-  ALL_INTERACTABLE_TYPES = [it_hero, it_enemy, it_card];
-
   STATE_UNKNOWN = 0;
 
   // simple actions
@@ -27,6 +23,24 @@ const
   STATE_TESTBATTLE  = 101;
   STATE_QUIT        = 102;
   STATE_INFO        = 103;
+
+  // interactable types
+  INTERACTABLE_TYPE_HERO  = 1;
+  INTERACTABLE_TYPE_ENEMY = 2;
+  INTERACTABLE_TYPE_CARD  = 3;
+
+  ALL_INTERACTABLE_TYPES = [INTERACTABLE_TYPE_HERO, INTERACTABLE_TYPE_ENEMY, INTERACTABLE_TYPE_CARD];
+
+  // game classes
+  GAME_CLASS_FIGHTER = 1;
+  GAME_CLASS_THIEF   = 2;
+  GAME_CLASS_WIZARD  = 3;
+  GAME_CLASS_CLERIC  = 4;
+  GAME_CLASS_RANGER  = 5;
+  GAME_CLASS_MONK    = 6;
+
+  // special card effects
+  CARD_EFFECT_DRAW_1 = 1;
 
 implementation
 
